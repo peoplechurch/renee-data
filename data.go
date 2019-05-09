@@ -1,6 +1,6 @@
 package shared
 
-// this is a data representation of how each individual is stored in SPOT
+// this is a data representation of how each individual member is stored
 type Member struct {
 	Account             string              `dynamo:"Account" json:"Account,omitempty"`
 	AgeGroup            string              `dynamo:"AgeGroup,omitempty" json:"AgeGroup,omitempty"`
@@ -30,6 +30,19 @@ type Member struct {
 	ThisIsHome          ThisIsHome          `dynamo:"ThisIsHome,omitempty" json:"ThisIsHome,omitempty"`
 	DiscoverYourPurpose DiscoverYourPurpose `dynamo:"DiscoverYourPurpose,omitempty" json:"DiscoverYourPurpose,omitempty"`
 	SpiritualGifts      SpiritualGiftsData  `dynamo:"SpiritualGifts,omitempty" json:"SpiritualGifts,omitempty"`
+}
+
+// this is how an tenant account is stored to determine what org/campus renee belongs to
+type Account struct {
+	Campus          string `json:"Campus"`
+	ClerkNumber     string `json:"ClerkNumber"`
+	GiveTrigger     string `json:"GiveTrigger"`
+	HomeTrigger     string `json:"HomeTrigger"`
+	NCTrigger       string `json:"NCTrigger"`
+	Organization    string `json:"Organization"`
+	SlackBotToken   string `json:"SlackBotToken"`
+	SlackOAuthToken string `json:"SlackOAuthToken"`
+	UUID            string `json:"UUID"`
 }
 
 type SpiritualGiftsData struct {
