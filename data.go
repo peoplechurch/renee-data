@@ -61,13 +61,14 @@ type Group struct {
 }
 
 type Volunteer struct {
-	Status bool     `dynamo:"Status,omitempty" json:"Status,omitempty"`
-	Teams  []string `dynamo:"Teams,omitempty" json:"Teams,omitempty"`
+	Status bool       `dynamo:"Status,omitempty" json:"Status,omitempty"`
+	Teams  []TeamData `dynamo:"Teams,omitempty" json:"Teams,omitempty"`
 }
 
-type Volunteer2 struct {
-	Status bool     `dynamo:"Status,omitempty" json:"Status,omitempty"`
-	Teams  []Groups `dynamo:"Teams,omitempty" json:"Teams,omitempty"`
+type TeamData struct {
+	UUID      string `dynamo:"UUID" json:"UUID,omitempty"`
+	GroupName string `dynamo:"GroupName,omitempty" json:"GroupName,omitempty"`
+	CreatedAt int64  `dynamo:"CreatedAt,omitempty" json:"CreatedAt,omitempty"`
 }
 
 type NewCreation struct {
