@@ -100,14 +100,17 @@ type DiscoverYourPurpose struct {
 }
 
 type Groups struct {
-	UUID        string        `dynamo:"UUID" json:"UUID"`
-	Leaders     []Member      `dynamo:"Leaders" json:"Leaders,omitempty"`
-	Attendees   []Member      `dynamo:"Attendees" json:"Attendees,omitempty"`
-	GroupName   string        `dynamo:"GroupName" json:"GroupName,omitempty"`
-	CreatedAt   int64         `dynamo:"CreatedAt" json:"CreatedAt,omitempty"`
-	LastUpdated int64         `dynamo:"LastUpdated" json:"LastUpdated,omitempty"`
-	Details     GroupDetails  `dynamo:"Details" json:"Details,omitempty"`
-	Capacity    GroupCapacity `dynamo:"Capacity" json:"Capacity,omitempty"`
+	Account      string        `dynamo:"Account,omitempty" json:"Account,omitempty"`
+	Organization string        `dynamo:"Organization,omitempty" json:"Organization,omitempty"`
+	Campus       string        `dynamo:"Campus,omitempty" json:"Campus,omitempty"`
+	UUID         string        `dynamo:"UUID" json:"UUID"`
+	Leaders      []Member      `dynamo:"Leaders" json:"Leaders,omitempty"`
+	Attendees    []Member      `dynamo:"Attendees" json:"Attendees,omitempty"`
+	GroupName    string        `dynamo:"GroupName" json:"GroupName,omitempty"`
+	CreatedAt    int64         `dynamo:"CreatedAt" json:"CreatedAt,omitempty"`
+	LastUpdated  int64         `dynamo:"LastUpdated" json:"LastUpdated,omitempty"`
+	Details      GroupDetails  `dynamo:"Details" json:"Details,omitempty"`
+	Capacity     GroupCapacity `dynamo:"Capacity" json:"Capacity,omitempty"`
 }
 
 type GroupDetails struct {
