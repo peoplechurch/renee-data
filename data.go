@@ -3,6 +3,8 @@ package shared
 // this is a data representation of how each individual member is stored
 type Member struct {
 	Account             string              `dynamo:"Account" json:"Account,omitempty"`
+	Organization        string              `dynamo:"Organization" json:"Organization,omitempty"`
+	Campus              string              `dynamo:"Campus" json:"Campus,omitempty"`
 	AgeGroup            string              `dynamo:"AgeGroup,omitempty" json:"AgeGroup,omitempty"`
 	ShirtSize           string              `dynamo:"ShirtSize,omitempty" json:"ShirtSize,omitempty"`
 	Baptism             Baptism             `dynamo:"Baptism,omitempty" json:"Baptism,omitempty"`
