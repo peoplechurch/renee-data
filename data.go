@@ -24,11 +24,9 @@ type Member struct {
 	NewCreation         NewCreation         `dynamo:"NewCreation,omitempty" json:"NewCreation,omitempty"`
 	FirstDecision       bool                `dynamo:"FirstDecision,omitempty" json:"FirstDecision,omitempty"`
 	Rededication        bool                `dynamo:"Rededication,omitempty" json:"Rededication,omitempty"`
-	Volunteer           Volunteer           `dynamo:"Volunteer,omitempty" json:"Volunteer,omitempty"`
-	InterestGroup       bool                `dynamo:"InterestGroup,omitempty" json:"InterestGroup,omitempty"`
-	InterestGroups      []string            `dynamo:"InterestGroups,omitempty" json:"InterestGroups,omitempty"`
-	GrowGroup           bool                `dynamo:"GrowGroup,omitempty" json:"GrowGroup,omitempty"`
-	GrowGroups          []string            `dynamo:"GrowGroups,omitempty" json:"GrowGroups,omitempty"`
+	Volunteer           Group               `dynamo:"Volunteer,omitempty" json:"Volunteer,omitempty"`
+	InterestGroup       Group               `dynamo:"InterestGroup,omitempty" json:"InterestGroup,omitempty"`
+	GrowGroup           Group               `dynamo:"GrowGroup,omitempty" json:"GrowGroup,omitempty"`
 	ThisIsHome          ThisIsHome          `dynamo:"ThisIsHome,omitempty" json:"ThisIsHome,omitempty"`
 	DiscoverYourPurpose DiscoverYourPurpose `dynamo:"DiscoverYourPurpose,omitempty" json:"DiscoverYourPurpose,omitempty"`
 	SpiritualGifts      SpiritualGiftsData  `dynamo:"SpiritualGifts,omitempty" json:"SpiritualGifts,omitempty"`
@@ -58,16 +56,11 @@ type Baptism struct {
 }
 
 type Group struct {
-	Status bool     `dynamo:"Status,omitempty" json:"Status,omitempty"`
-	Groups []Groups `dynamo:"Groups,omitempty" json:"Groups,omitempty"`
+	Status bool              `dynamo:"Status,omitempty" json:"Status,omitempty"`
+	Groups []MemberGroupData `dynamo:"Groups,omitempty" json:"Groups,omitempty"`
 }
 
-type Volunteer struct {
-	Status bool       `dynamo:"Status,omitempty" json:"Status,omitempty"`
-	Teams  []TeamData `dynamo:"Teams,omitempty" json:"Teams,omitempty"`
-}
-
-type TeamData struct {
+type MemberGroupData struct {
 	UUID      string `dynamo:"UUID" json:"UUID,omitempty"`
 	GroupName string `dynamo:"GroupName,omitempty" json:"GroupName,omitempty"`
 	CreatedAt int64  `dynamo:"CreatedAt,omitempty" json:"CreatedAt,omitempty"`
