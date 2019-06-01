@@ -93,17 +93,20 @@ type DiscoverYourPurpose struct {
 }
 
 type Groups struct {
-	Account      string        `dynamo:"Account,omitempty" json:"Account,omitempty"`
-	Organization string        `dynamo:"Organization,omitempty" json:"Organization,omitempty"`
-	Campus       string        `dynamo:"Campus,omitempty" json:"Campus,omitempty"`
-	UUID         string        `dynamo:"UUID" json:"UUID"`
-	Leaders      []Member      `dynamo:"Leaders" json:"Leaders,omitempty"`
-	Attendees    []Member      `dynamo:"Attendees" json:"Attendees,omitempty"`
-	GroupName    string        `dynamo:"GroupName" json:"GroupName,omitempty"`
-	CreatedAt    int64         `dynamo:"CreatedAt" json:"CreatedAt,omitempty"`
-	LastUpdated  int64         `dynamo:"LastUpdated" json:"LastUpdated,omitempty"`
-	Details      GroupDetails  `dynamo:"Details" json:"Details,omitempty"`
-	Capacity     GroupCapacity `dynamo:"Capacity" json:"Capacity,omitempty"`
+	Account      string                       `dynamo:"Account" json:"Account"`
+	Organization string                       `dynamo:"Organization" json:"Organization"`
+	Campus       string                       `dynamo:"Campus" json:"Campus"`
+	UUID         string                       `dynamo:"UUID" json:"UUID"`
+	Leaders      []Member                     `dynamo:"Leaders,omitempty" json:"Leaders,omitempty"`
+	Attendees    []Member                     `dynamo:"Attendees,omitempty" json:"Attendees,omitempty"`
+	Oversights   []Member                     `dynamo:"Oversights,omitempty" json:"Oversights,omitempty"`
+	GroupName    string                       `dynamo:"GroupName" json:"GroupName,omitempty"`
+	CreatedAt    int64                        `dynamo:"CreatedAt" json:"CreatedAt,omitempty"`
+	LastUpdated  int64                        `dynamo:"LastUpdated" json:"LastUpdated,omitempty"`
+	Details      GroupDetails                 `dynamo:"Details" json:"Details,omitempty"`
+	Capacity     GroupCapacity                `dynamo:"Capacity" json:"Capacity,omitempty"`
+	StudyKey     string                       `dynamo:"StudyKey,omitempty" json:"StudyKey,omitempty"`
+	Attendance   map[string][]GroupAttendance `dynamo:"Attendance,omitempty" json:"Attendance,omitempty"`
 }
 
 type GroupDetails struct {
@@ -118,4 +121,15 @@ type GroupCapacity struct {
 	Limit      int  `dynamo:"Limit" json:"Limit,omitempty"`
 	Openings   int  `dynamo:"Openings" json:"Openings,omitempty"`
 	Unlimited  bool `dynamo:"Unlimited" json:"Unlimited,omitempty"`
+}
+
+type GroupAttendance struct {
+	UUID        string `dynamo:"UUID,omitempty" json:"UUID,omitempty"`
+	SlackID     string `dynamo:"SlackID,omitempty" json:"SlackID,omitempty"`
+	Email       string `dynamo:"Email,omitempty" json:"Email,omitempty"`
+	PhoneNumber string `dynamo:"PhoneNumber,omitempty" json:"PhoneNumber,omitempty"`
+	FirstName   string `dynamo:"FirstName,omitempty" json:"FirstName,omitempty"`
+	LastName    string `dynamo:"LastName,omitempty" json:"LastName"`
+	FullName    string `dynamo:"FullName,omitempty" json:"FullName"`
+	CreatedAt   int64  `dynamo:"CreatedAt,omitempty" json:"CreatedAt"`
 }
