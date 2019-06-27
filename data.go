@@ -103,6 +103,7 @@ type Groups struct {
 	GroupName       string                       `dynamo:"GroupName" json:"GroupName,omitempty"`
 	CreatedAt       int64                        `dynamo:"CreatedAt" json:"CreatedAt,omitempty"`
 	LastUpdated     int64                        `dynamo:"LastUpdated" json:"LastUpdated,omitempty"`
+	AgeGroup        string                       `dynamo:"AgeGroup,omitempty" json:"AgeGroup,omitempty"`
 	Details         GroupDetails                 `dynamo:"Details" json:"Details,omitempty"`
 	Capacity        GroupCapacity                `dynamo:"Capacity" json:"Capacity,omitempty"`
 	StudyKey        string                       `dynamo:"StudyKey,omitempty" json:"StudyKey,omitempty"`
