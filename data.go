@@ -115,6 +115,8 @@ type Groups struct {
 type GroupDetails struct {
 	Date        int64  `dynamo:"Date" json:"Date,omitempty"`
 	Location    string `dynamo:"Location" json:"Location,omitempty"`
+	StartTime   int64  `dynamo:"StartTime,omitempty" json:"StartTime,omitempty"`
+	EndTime     int64  `dynamo:"EndTime,omitempty" json:"EndTime,omitempty"`
 	Time        int64  `dynamo:"Time" json:"Time,omitempty"`
 	Description string `dynamo:"Description" json:"Description,omitempty"`
 }
