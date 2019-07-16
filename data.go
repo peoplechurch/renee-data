@@ -20,6 +20,7 @@ type Member struct {
 	PhoneNumber         string              `dynamo:"PhoneNumber,omitempty" json:"PhoneNumber,omitempty"`
 	ReceiveEmail        bool                `dynamo:"ReceiveEmail,omitempty" json:"ReceiveEmail,omitempty"`
 	SlackID             string              `dynamo:"SlackID,omitempty" json:"SlackID,omitempty"`
+	SlackChannelID      string              `dynamo:"SlackChannelID,omitempty" json:"SlackChannelID,omitempty"`
 	UUID                string              `dynamo:"UUID,omitempty" json:"UUID,omitempty"`
 	NewCreation         NewCreation         `dynamo:"NewCreation,omitempty" json:"NewCreation,omitempty"`
 	FirstDecision       bool                `dynamo:"FirstDecision,omitempty" json:"FirstDecision,omitempty"`
