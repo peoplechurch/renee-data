@@ -108,6 +108,7 @@ type Groups struct {
 	Details         GroupDetails                 `dynamo:"Details" json:"Details,omitempty"`
 	Capacity        GroupCapacity                `dynamo:"Capacity" json:"Capacity,omitempty"`
 	StudyKey        string                       `dynamo:"StudyKey,omitempty" json:"StudyKey,omitempty"`
+	Type            string                       `dynamo:"Type,omitempty" json:"Type,omitempty"`
 	RegistrationURL string                       `dynamo:"RegistrationURL,omitempty" json:"RegistrationURL,omitempty"`
 	RequestFormLink string                       `dynamo:"RequestFormLink,omitempty" json:"RequestFormLink,omitempty"`
 	Private         bool                         `dynamo:"Private,omitempty" json:"Private,omitempty"`
