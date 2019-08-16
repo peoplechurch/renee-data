@@ -117,7 +117,7 @@ type Groups struct {
 }
 
 type GroupDetails struct {
-	ChannelID   int64  `dynamo:"ChannelID" json:"ChannelID,omitempty"`
+	ChannelID   string `dynamo:"ChannelID" json:"ChannelID,omitempty"`
 	Date        int64  `dynamo:"Date" json:"Date,omitempty"`
 	Location    string `dynamo:"Location" json:"Location,omitempty"`
 	StartTime   int64  `dynamo:"StartTime,omitempty" json:"StartTime,omitempty"`
