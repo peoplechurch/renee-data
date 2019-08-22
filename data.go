@@ -117,13 +117,13 @@ type Groups struct {
 }
 
 type GroupDetails struct {
-	ChannelID   string `dynamo:"ChannelID" json:"ChannelID,omitempty"`
-	Date        int64  `dynamo:"Date" json:"Date,omitempty"`
-	Location    string `dynamo:"Location" json:"Location,omitempty"`
+	ChannelID   string `dynamo:"ChannelID,omitempty" json:"ChannelID,omitempty"`
+	Date        int64  `dynamo:"Date,omitempty" json:"Date,omitempty"`
+	Location    string `dynamo:"Location,omitempty" json:"Location,omitempty"`
 	StartTime   int64  `dynamo:"StartTime,omitempty" json:"StartTime,omitempty"`
 	EndTime     int64  `dynamo:"EndTime,omitempty" json:"EndTime,omitempty"`
-	Time        int64  `dynamo:"Time" json:"Time,omitempty"`
-	Description string `dynamo:"Description" json:"Description,omitempty"`
+	Time        int64  `dynamo:"Time,omitempty" json:"Time,omitempty"`
+	Description string `dynamo:"Description,omitempty" json:"Description,omitempty"`
 }
 
 type GroupCapacity struct {
