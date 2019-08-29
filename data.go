@@ -23,8 +23,6 @@ type Member struct {
 	SlackChannelID      string              `dynamo:"SlackChannelID,omitempty" json:"SlackChannelID,omitempty"`
 	UUID                string              `dynamo:"UUID,omitempty" json:"UUID,omitempty"`
 	NewCreation         NewCreation         `dynamo:"NewCreation,omitempty" json:"NewCreation,omitempty"`
-	FirstDecision       bool                `dynamo:"FirstDecision,omitempty" json:"FirstDecision,omitempty"`
-	Rededication        bool                `dynamo:"Rededication,omitempty" json:"Rededication,omitempty"`
 	Volunteer           Group               `dynamo:"Volunteer,omitempty" json:"Volunteer,omitempty"`
 	InterestGroup       Group               `dynamo:"InterestGroup,omitempty" json:"InterestGroup,omitempty"`
 	GrowGroup           Group               `dynamo:"GrowGroup,omitempty" json:"GrowGroup,omitempty"`
