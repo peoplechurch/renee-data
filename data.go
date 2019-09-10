@@ -110,6 +110,7 @@ type Groups struct {
 	Type            string                       `dynamo:"Type,omitempty" json:"Type,omitempty"`
 	RegistrationURL string                       `dynamo:"RegistrationURL,omitempty" json:"RegistrationURL,omitempty"`
 	RequestFormLink string                       `dynamo:"RequestFormLink,omitempty" json:"RequestFormLink,omitempty"`
+	Active          bool                         `dynamo:"Active,omitempty" json:"Active,omitempty"`
 	Private         bool                         `dynamo:"Private,omitempty" json:"Private,omitempty"`
 	Attendance      map[string][]GroupAttendance `dynamo:"Attendance,omitempty" json:"Attendance,omitempty"`
 }
