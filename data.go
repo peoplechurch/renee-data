@@ -45,6 +45,7 @@ type Account struct {
 	UUID             string `json:"UUID"`
 	NewCreationsTeam string `json:"NewCreationsTeam"`
 	GrowthTrackTeam  string `json:"GrowthTrackTeam"`
+	HealthTeam       string `json:"HealthTeam"`
 }
 
 type SpiritualGiftsData struct {
