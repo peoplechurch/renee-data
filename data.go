@@ -7,6 +7,7 @@ type Member struct {
 	Campus              string              `dynamo:"Campus" json:"Campus,omitempty"`
 	AgeGroup            string              `dynamo:"AgeGroup,omitempty" json:"AgeGroup,omitempty"`
 	ShirtSize           string              `dynamo:"ShirtSize,omitempty" json:"ShirtSize,omitempty"`
+	Draw                string              `dynamo:"Draw,omitempty" json:"Draw,omitempty"`
 	Baptism             Baptism             `dynamo:"Baptism,omitempty" json:"Baptism,omitempty"`
 	Birthday            string              `dynamo:"Birthday,omitempty" json:"Birthday,omitempty"`
 	Email               string              `dynamo:"Email,omitempty" json:"Email,omitemptyv"`
