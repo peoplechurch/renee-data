@@ -7,7 +7,7 @@ type Member struct {
 	Campus              string              `dynamo:"Campus" json:"Campus,omitempty"`
 	AgeGroup            string              `dynamo:"AgeGroup,omitempty" json:"AgeGroup,omitempty"`
 	ShirtSize           string              `dynamo:"ShirtSize,omitempty" json:"ShirtSize,omitempty"`
-	Draw                string              `dynamo:"Draw,omitempty" json:"Draw,omitempty"`
+	Draw                DrawData            `dynamo:"Draw,omitempty" json:"Draw,omitempty"`
 	Baptism             Baptism             `dynamo:"Baptism,omitempty" json:"Baptism,omitempty"`
 	Birthday            string              `dynamo:"Birthday,omitempty" json:"Birthday,omitempty"`
 	Email               string              `dynamo:"Email,omitempty" json:"Email,omitemptyv"`
@@ -100,6 +100,11 @@ type ThisIsHome struct {
 type DiscoverYourPurpose struct {
 	Status    bool  `dynamo:"Status,omitempty" json:"Status,omitempty"`
 	CreatedAt int64 `dynamo:"CreatedAt,omitempty" json:"CreatedAt,omitempty"`
+}
+
+type DrawData struct {
+	Type      string `dynamo:"Type,omitemtpy" json:"Type,omitempty"`
+	CreatedAt int64  `dynamo:"CreatedAt,omitempty" json:"CreatedAt,omitempty"`
 }
 
 type Groups struct {
