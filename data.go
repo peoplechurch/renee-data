@@ -39,8 +39,11 @@ type Account struct {
 	ClerkNumber            string `json:"ClerkNumber"`
 	GiveTextResponse       string `json:"GiveTextResponse"`
 	GiveTrigger            string `json:"GiveTrigger"`
+	GrowthTrackTeam        string `json:"GrowthTrackTeam"`
+	HealthTeam             string `json:"HealthTeam"`
 	HomeTrigger            string `json:"HomeTrigger"`
 	NCTrigger              string `json:"NCTrigger"`
+	NewCreationsTeam       string `json:"NewCreationsTeam"`
 	Organization           string `json:"Organization"`
 	SlackAppID             string `json:"SlackAppID"`
 	SlackBotToken          string `json:"SlackBotToken"`
