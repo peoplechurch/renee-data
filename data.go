@@ -37,6 +37,7 @@ type Member struct {
 type Account struct {
 	Campus                 string `json:"Campus"`
 	ClerkNumber            string `json:"ClerkNumber"`
+	CurrentGroupTier       int    `json:"CurrentGroupTier"`
 	GiveTextResponse       string `json:"GiveTextResponse"`
 	GiveTrigger            string `json:"GiveTrigger"`
 	GrowthTrackTeam        string `json:"GrowthTrackTeam"`
