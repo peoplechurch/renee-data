@@ -53,6 +53,7 @@ type Account struct {
 	SlackAppID                 string `dynamo:"SlackAppID,omitempty" json:"SlackAppID"`
 	SlackBotToken              string `dynamo:"SlackBotToken,omitempty" json:"SlackBotToken"`
 	SlackClientID              string `dynamo:"SlackClientID,omitempty" json:"SlackClientID"`
+	SlackGeneralChannelID      string `dynamo:"SlackGeneralChannelID,omitempty" json:"SlackGeneralChannelID"`
 	SlackClientSecret          string `dynamo:"SlackClientSecret,omitempty" json:"SlackClientSecret"`
 	SlackInviteToken           string `dynamo:"SlackInviteToken,omitempty" json:"SlackInviteToken"`
 	SlackOAuthToken            string `dynamo:"SlackOAuthToken,omitempty" json:"SlackOAuthToken"`
