@@ -35,29 +35,32 @@ type Member struct {
 
 // this is how an tenant account is stored to determine what org/campus renee belongs to
 type Account struct {
-	Campus                 string `dynamo:"Campus,omitempty" json:"Campus"`
-	ClerkNumber            string `dynamo:"ClerkNumber,omitempty" json:"ClerkNumber"`
-	CurrentGrowGroupTier   int    `dynamo:"CurrentGrowGroupTier,omitempty" json:"CurrentGrowGroupTier"`
-	GiveTextResponse       string `dynamo:"GiveTextResponse,omitempty" json:"GiveTextResponse"`
-	GiveTrigger            string `dynamo:"GiveTrigger,omitempty" json:"GiveTrigger"`
-	GrowthTrackTeam        string `dynamo:"GrowthTrackTeam,omitempty" json:"GrowthTrackTeam"`
-	GrowGroupTeam          string `dynamo:"GrowGroupTeam,omitempty" json:"GrowGroupTeam"`
-	HealthTeam             string `dynamo:"HealthTeam,omitempty" json:"HealthTeam"`
-	HomeTrigger            string `dynamo:"HomeTrigger,omitempty" json:"HomeTrigger"`
-	NCTrigger              string `dynamo:"NCTrigger,omitempty" json:"NCTrigger"`
-	NewCreationsTeam       string `dynamo:"NewCreationsTeam,omitempty" json:"NewCreationsTeam"`
-	Organization           string `dynamo:"Organization,omitempty" json:"Organization"`
-	SlackAppID             string `dynamo:"SlackAppID,omitempty" json:"SlackAppID"`
-	SlackBotToken          string `dynamo:"SlackBotToken,omitempty" json:"SlackBotToken"`
-	SlackClientID          string `dynamo:"SlackClientID,omitempty" json:"SlackClientID"`
-	SlackClientSecret      string `dynamo:"SlackClientSecret,omitempty" json:"SlackClientSecret"`
-	SlackInviteToken       string `dynamo:"SlackInviteToken,omitempty" json:"SlackInviteToken"`
-	SlackOAuthToken        string `dynamo:"SlackOAuthToken,omitempty" json:"SlackOAuthToken"`
-	SlackSigningSecret     string `dynamo:"SlackSigningSecret,omitempty" json:"SlackSigningSecret"`
-	SlackTeamID            string `dynamo:"SlackTeamID,omitempty" json:"SlackTeamID"`
-	SlackURL               string `dynamo:"SlackURL,omitempty" json:"SlackURL"`
-	SlackVerificationToken string `dynamo:"SlackVerificationToken,omitempty" json:"SlackVerificationToken"`
-	UUID                   string `dynamo:"UUID,omitempty" json:"UUID"`
+	Campus                     string `dynamo:"Campus,omitempty" json:"Campus"`
+	ClerkNumber                string `dynamo:"ClerkNumber,omitempty" json:"ClerkNumber"`
+	CurrentGrowGroupTier       int    `dynamo:"CurrentGrowGroupTier,omitempty" json:"CurrentGrowGroupTier"`
+	GiveTextResponse           string `dynamo:"GiveTextResponse,omitempty" json:"GiveTextResponse"`
+	GiveSlackResponse          string `dynamo:"GiveSlackResponse,omitempty" json:"GiveSlackResponse"`
+	DigitalChurchSlackResponse string `dynamo:"DigitalChurchSlackResponse,omitempty" json:"DigitalChurchSlackResponse"`
+	OurCodeSlackResponse       string `dynamo:"OurCodeSlackResponse,omitempty" json:"OurCodeSlackResponse"`
+	GiveTrigger                string `dynamo:"GiveTrigger,omitempty" json:"GiveTrigger"`
+	GrowthTrackTeam            string `dynamo:"GrowthTrackTeam,omitempty" json:"GrowthTrackTeam"`
+	GrowGroupTeam              string `dynamo:"GrowGroupTeam,omitempty" json:"GrowGroupTeam"`
+	HealthTeam                 string `dynamo:"HealthTeam,omitempty" json:"HealthTeam"`
+	HomeTrigger                string `dynamo:"HomeTrigger,omitempty" json:"HomeTrigger"`
+	NCTrigger                  string `dynamo:"NCTrigger,omitempty" json:"NCTrigger"`
+	NewCreationsTeam           string `dynamo:"NewCreationsTeam,omitempty" json:"NewCreationsTeam"`
+	Organization               string `dynamo:"Organization,omitempty" json:"Organization"`
+	SlackAppID                 string `dynamo:"SlackAppID,omitempty" json:"SlackAppID"`
+	SlackBotToken              string `dynamo:"SlackBotToken,omitempty" json:"SlackBotToken"`
+	SlackClientID              string `dynamo:"SlackClientID,omitempty" json:"SlackClientID"`
+	SlackClientSecret          string `dynamo:"SlackClientSecret,omitempty" json:"SlackClientSecret"`
+	SlackInviteToken           string `dynamo:"SlackInviteToken,omitempty" json:"SlackInviteToken"`
+	SlackOAuthToken            string `dynamo:"SlackOAuthToken,omitempty" json:"SlackOAuthToken"`
+	SlackSigningSecret         string `dynamo:"SlackSigningSecret,omitempty" json:"SlackSigningSecret"`
+	SlackTeamID                string `dynamo:"SlackTeamID,omitempty" json:"SlackTeamID"`
+	SlackURL                   string `dynamo:"SlackURL,omitempty" json:"SlackURL"`
+	SlackVerificationToken     string `dynamo:"SlackVerificationToken,omitempty" json:"SlackVerificationToken"`
+	UUID                       string `dynamo:"UUID,omitempty" json:"UUID"`
 }
 
 type SpiritualGiftsData struct {
