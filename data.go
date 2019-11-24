@@ -41,6 +41,7 @@ type Account struct {
 	GiveTextResponse       string `json:"GiveTextResponse"`
 	GiveTrigger            string `json:"GiveTrigger"`
 	GrowthTrackTeam        string `json:"GrowthTrackTeam"`
+	GrowGroupTeam          string `json:"GrowGroupTeam"`
 	HealthTeam             string `json:"HealthTeam"`
 	HomeTrigger            string `json:"HomeTrigger"`
 	NCTrigger              string `json:"NCTrigger"`
