@@ -128,8 +128,8 @@ type Groups struct {
 	CreatedAt       int64                        `dynamo:"CreatedAt" json:"CreatedAt,omitempty"`
 	LastUpdated     int64                        `dynamo:"LastUpdated" json:"LastUpdated,omitempty"`
 	AgeGroup        string                       `dynamo:"AgeGroup,omitempty" json:"AgeGroup,omitempty"`
-	Details         GroupDetails                 `dynamo:"Details" json:"Details,omitempty"`
-	Capacity        GroupCapacity                `dynamo:"Capacity" json:"Capacity,omitempty"`
+	Details         GroupDetails                 `dynamo:"Details,omitempty" json:"Details,omitempty"`
+	Capacity        GroupCapacity                `dynamo:"Capacity, omitempty" json:"Capacity,omitempty"`
 	StudyKey        string                       `dynamo:"StudyKey,omitempty" json:"StudyKey,omitempty"`
 	Type            string                       `dynamo:"Type,omitempty" json:"Type,omitempty"`
 	RegistrationURL string                       `dynamo:"RegistrationURL,omitempty" json:"RegistrationURL,omitempty"`
