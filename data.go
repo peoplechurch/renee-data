@@ -41,7 +41,6 @@ type Account struct {
 	GiveTextResponse           string `dynamo:"GiveTextResponse,omitempty" json:"GiveTextResponse"`
 	GiveSlackResponse          string `dynamo:"GiveSlackResponse,omitempty" json:"GiveSlackResponse"`
 	DigitalChurchSlackResponse string `dynamo:"DigitalChurchSlackResponse,omitempty" json:"DigitalChurchSlackResponse"`
-	OurCodeSlackResponse       string `dynamo:"OurCodeSlackResponse,omitempty" json:"OurCodeSlackResponse"`
 	GiveTrigger                string `dynamo:"GiveTrigger,omitempty" json:"GiveTrigger"`
 	GrowthTrackTeam            string `dynamo:"GrowthTrackTeam,omitempty" json:"GrowthTrackTeam"`
 	GrowGroupTeam              string `dynamo:"GrowGroupTeam,omitempty" json:"GrowGroupTeam"`
@@ -50,6 +49,7 @@ type Account struct {
 	NCTrigger                  string `dynamo:"NCTrigger,omitempty" json:"NCTrigger"`
 	NewCreationsTeam           string `dynamo:"NewCreationsTeam,omitempty" json:"NewCreationsTeam"`
 	Organization               string `dynamo:"Organization,omitempty" json:"Organization"`
+	OurCodeSlackResponse       string `dynamo:"OurCodeSlackResponse,omitempty" json:"OurCodeSlackResponse"`
 	SlackAppID                 string `dynamo:"SlackAppID,omitempty" json:"SlackAppID"`
 	SlackBotToken              string `dynamo:"SlackBotToken,omitempty" json:"SlackBotToken"`
 	SlackClientID              string `dynamo:"SlackClientID,omitempty" json:"SlackClientID"`
@@ -61,6 +61,7 @@ type Account struct {
 	SlackTeamID                string `dynamo:"SlackTeamID,omitempty" json:"SlackTeamID"`
 	SlackURL                   string `dynamo:"SlackURL,omitempty" json:"SlackURL"`
 	SlackVerificationToken     string `dynamo:"SlackVerificationToken,omitempty" json:"SlackVerificationToken"`
+	WelcomeSlackMessage        string `dynamo:"WelcomeSlackMessage,omitempty" json:"WelcomeSlackMessage"`
 	UUID                       string `dynamo:"UUID,omitempty" json:"UUID"`
 }
 
