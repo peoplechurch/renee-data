@@ -37,7 +37,7 @@ type Member struct {
 type Account struct {
 	Campus                     string `dynamo:"Campus,omitempty" json:"Campus"`
 	ClerkNumber                string `dynamo:"ClerkNumber,omitempty" json:"ClerkNumber"`
-	CurrentGrowGroupTier       int    `dynamo:"CurrentGrowGroupTier,omitempty" json:"CurrentGrowGroupTier"`
+	CurrentGrowGroupTier       []int  `dynamo:"CurrentGrowGroupTier,omitempty" json:"CurrentGrowGroupTier"`
 	GiveTextResponse           string `dynamo:"GiveTextResponse,omitempty" json:"GiveTextResponse"`
 	GiveSlackResponse          string `dynamo:"GiveSlackResponse,omitempty" json:"GiveSlackResponse"`
 	DigitalChurchSlackResponse string `dynamo:"DigitalChurchSlackResponse,omitempty" json:"DigitalChurchSlackResponse"`
