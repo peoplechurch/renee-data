@@ -142,7 +142,7 @@ type Groups struct {
 
 type GroupDetails struct {
 	ChannelID   string `dynamo:"ChannelID,omitempty" json:"ChannelID,omitempty"`
-	Date        int64  `dynamo:"Date,omitempty" json:"Date,omitempty"`
+	Tier        int    `dynamo:"Date,omitempty" json:"Date,omitempty"`
 	Location    string `dynamo:"Location,omitempty" json:"Location,omitempty"`
 	StartTime   int64  `dynamo:"StartTime,omitempty" json:"StartTime,omitempty"`
 	EndTime     int64  `dynamo:"EndTime,omitempty" json:"EndTime,omitempty"`
