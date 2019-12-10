@@ -157,13 +157,9 @@ type GroupCapacity struct {
 }
 
 type GroupAttendance struct {
-	UUID           string `dynamo:"UUID,omitempty" json:"UUID,omitempty"`
-	SlackID        string `dynamo:"SlackID,omitempty" json:"SlackID,omitempty"`
-	SlackChannelID string `dynamo:"SlackChannelID,omitempty" json:"SlackChannelID,omitempty"`
-	Email          string `dynamo:"Email,omitempty" json:"Email,omitempty"`
-	PhoneNumber    string `dynamo:"PhoneNumber,omitempty" json:"PhoneNumber,omitempty"`
-	FirstName      string `dynamo:"FirstName,omitempty" json:"FirstName,omitempty"`
-	LastName       string `dynamo:"LastName,omitempty" json:"LastName"`
-	FullName       string `dynamo:"FullName,omitempty" json:"FullName"`
-	CreatedAt      int64  `dynamo:"CreatedAt,omitempty" json:"CreatedAt"`
+	UUID      string `dynamo:"UUID,omitempty" json:"UUID,omitempty"`
+	FullName  string `dynamo:"FullName,omitempty" json:"FullName"`
+	CreatedAt int64  `dynamo:"CreatedAt,omitempty" json:"CreatedAt"`
+	Account   string `dynamo:"Account,omitempty" json:"Account"`
+	Campus    string `dynamo:"Campus,omitempty" json:"Campus"`
 }
