@@ -123,7 +123,7 @@ type Groups struct {
 	Campus          string                       `dynamo:"Campus" json:"Campus"`
 	UUID            string                       `dynamo:"UUID" json:"UUID"`
 	Leaders         []Member                     `dynamo:"Leaders,omitempty" json:"Leaders,omitempty"`
-	Attendees       []Member                     `dynamo:"Attendees,omitempty" json:"Attendees,omitempty"`
+	Registrations   []Member                     `dynamo:"Registrations,omitempty" json:"Registrations,omitempty"`
 	Oversights      []Member                     `dynamo:"Oversights,omitempty" json:"Oversights,omitempty"`
 	GroupName       string                       `dynamo:"GroupName" json:"GroupName,omitempty"`
 	CreatedAt       int64                        `dynamo:"CreatedAt" json:"CreatedAt,omitempty"`
