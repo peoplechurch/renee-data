@@ -3,8 +3,9 @@ package shared
 // this is a data representation of how each individual member is stored
 type Member struct {
 	Account             string              `dynamo:"Account" json:"Account,omitempty"`
-	Organization        string              `dynamo:"Organization" json:"Organization,omitempty"`
+	AccountName         string              `dynamo:"AccountName,omitempty" json:"AccountName"`
 	Campus              string              `dynamo:"Campus" json:"Campus,omitempty"`
+	CampusName          string              `dynamo:"CampusName" json:"CampusName,omitempty"`
 	AgeGroup            string              `dynamo:"AgeGroup,omitempty" json:"AgeGroup,omitempty"`
 	ShirtSize           string              `dynamo:"ShirtSize,omitempty" json:"ShirtSize,omitempty"`
 	Draw                DrawData            `dynamo:"Draw,omitempty" json:"Draw,omitempty"`
@@ -126,8 +127,10 @@ type DrawData struct {
 
 type Groups struct {
 	Account         string                       `dynamo:"Account" json:"Account"`
+	AccountName     string                       `dynamo:"AccountName" json:"AccountName"`
+	Campus          string                       `dynamo:"Campus" json:"Campus,omitempty"`
+	CampusName      string                       `dynamo:"CampusName" json:"CampusName,omitempty"`
 	Organization    string                       `dynamo:"Organization" json:"Organization"`
-	Campus          string                       `dynamo:"Campus" json:"Campus"`
 	UUID            string                       `dynamo:"UUID" json:"UUID"`
 	Leaders         []Member                     `dynamo:"Leaders,omitempty" json:"Leaders,omitempty"`
 	Registrations   []Member                     `dynamo:"Registrations,omitempty" json:"Registrations,omitempty"`
