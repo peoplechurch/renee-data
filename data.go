@@ -33,11 +33,19 @@ type Member struct {
 	SpiritualGifts      SpiritualGiftsData  `dynamo:"SpiritualGifts,omitempty" json:"SpiritualGifts,omitempty"`
 }
 
-// this is how an tenant account is stored to determine what org/campus renee belongs to
+// this is how a tenant account is stored
 type Account struct {
-	Campus                     string `dynamo:"Campus,omitempty" json:"Campus"`
+	UUID string `dynamo:"UUID,omitempty" json:"UUID"`
+	Name string `dynamo:"Name,omitempty" json:"Name"`
+}
+
+// this is how an individual campus data is stored to determine what account renee belongs to
+type Campus struct {
+	UUID                       string `dynamo:"UUID,omitempty" json:"UUID"`
+	Account                    string `dynamo:"Account,omitempty" json:"Account"`
+	AccountName                string `dynamo:"AccountName,omitempty" json:"AccountName"`
+	CampusName                 string `dynamo:"CampusName,omitempty" json:"CampusName"`
 	ClerkNumber                string `dynamo:"ClerkNumber,omitempty" json:"ClerkNumber"`
-	CurrentGrowGroupTier       []int  `dynamo:"CurrentGrowGroupTier,omitempty" json:"CurrentGrowGroupTier"`
 	GiveTextResponse           string `dynamo:"GiveTextResponse,omitempty" json:"GiveTextResponse"`
 	GiveSlackResponse          string `dynamo:"GiveSlackResponse,omitempty" json:"GiveSlackResponse"`
 	DigitalChurchSlackResponse string `dynamo:"DigitalChurchSlackResponse,omitempty" json:"DigitalChurchSlackResponse"`
@@ -48,7 +56,7 @@ type Account struct {
 	HomeTrigger                string `dynamo:"HomeTrigger,omitempty" json:"HomeTrigger"`
 	NCTrigger                  string `dynamo:"NCTrigger,omitempty" json:"NCTrigger"`
 	NewCreationsTeam           string `dynamo:"NewCreationsTeam,omitempty" json:"NewCreationsTeam"`
-	Organization               string `dynamo:"Organization,omitempty" json:"Organization"`
+	CurrentGrowGroupTier       []int  `dynamo:"CurrentGrowGroupTier,omitempty" json:"CurrentGrowGroupTier"`
 	OurCodeSlackResponse       string `dynamo:"OurCodeSlackResponse,omitempty" json:"OurCodeSlackResponse"`
 	SlackAppID                 string `dynamo:"SlackAppID,omitempty" json:"SlackAppID"`
 	SlackBotToken              string `dynamo:"SlackBotToken,omitempty" json:"SlackBotToken"`
@@ -62,7 +70,6 @@ type Account struct {
 	SlackURL                   string `dynamo:"SlackURL,omitempty" json:"SlackURL"`
 	SlackVerificationToken     string `dynamo:"SlackVerificationToken,omitempty" json:"SlackVerificationToken"`
 	WelcomeSlackMessage        string `dynamo:"WelcomeSlackMessage,omitempty" json:"WelcomeSlackMessage"`
-	UUID                       string `dynamo:"UUID,omitempty" json:"UUID"`
 }
 
 type SpiritualGiftsData struct {
