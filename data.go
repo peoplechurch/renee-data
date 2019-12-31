@@ -44,7 +44,7 @@ type Campus struct {
 	UUID                       string `dynamo:"UUID,omitempty" json:"UUID"`
 	Account                    string `dynamo:"Account,omitempty" json:"Account"`
 	AccountName                string `dynamo:"AccountName,omitempty" json:"AccountName"`
-	CampusName                 string `dynamo:"CampusName,omitempty" json:"CampusName"`
+	Name                       string `dynamo:"Name,omitempty" json:"Name"`
 	ClerkNumber                string `dynamo:"ClerkNumber,omitempty" json:"ClerkNumber"`
 	GiveTextResponse           string `dynamo:"GiveTextResponse,omitempty" json:"GiveTextResponse"`
 	GiveSlackResponse          string `dynamo:"GiveSlackResponse,omitempty" json:"GiveSlackResponse"`
