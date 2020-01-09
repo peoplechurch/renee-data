@@ -130,7 +130,6 @@ type Groups struct {
 	AccountName     string                       `dynamo:"AccountName" json:"AccountName"`
 	Campus          string                       `dynamo:"Campus" json:"Campus,omitempty"`
 	CampusName      string                       `dynamo:"CampusName" json:"CampusName,omitempty"`
-	Organization    string                       `dynamo:"Organization" json:"Organization"`
 	UUID            string                       `dynamo:"UUID" json:"UUID"`
 	Leaders         []Member                     `dynamo:"Leaders,omitempty" json:"Leaders,omitempty"`
 	Registrations   []Member                     `dynamo:"Registrations,omitempty" json:"Registrations,omitempty"`
