@@ -47,6 +47,7 @@ type Campus struct {
 	ClerkNumber                string `dynamo:"ClerkNumber,omitempty" json:"ClerkNumber"`
 	CurrentGrowGroupTier       []int  `dynamo:"CurrentGrowGroupTier,omitempty" json:"CurrentGrowGroupTier"`
 	DigitalChurchSlackResponse string `dynamo:"DigitalChurchSlackResponse,omitempty" json:"DigitalChurchSlackResponse"`
+	EventsTeam                 string `dynamo:"EventsTeam,omitempty" json:"EventsTeam"`
 	GiveTextResponse           string `dynamo:"GiveTextResponse,omitempty" json:"GiveTextResponse"`
 	GiveTrigger                string `dynamo:"GiveTrigger,omitempty" json:"GiveTrigger"`
 	GiveSlackResponse          string `dynamo:"GiveSlackResponse,omitempty" json:"GiveSlackResponse"`
@@ -54,10 +55,12 @@ type Campus struct {
 	GrowGroupTeam              string `dynamo:"GrowGroupTeam,omitempty" json:"GrowGroupTeam"`
 	HealthTeam                 string `dynamo:"HealthTeam,omitempty" json:"HealthTeam"`
 	HomeTrigger                string `dynamo:"HomeTrigger,omitempty" json:"HomeTrigger"`
+	InterestGroupTeam          string `dynamo:"InterestGroupTeam,omitempty" json:"InterestGroupTeam"`
 	Name                       string `dynamo:"Name,omitempty" json:"Name"`
 	NCTrigger                  string `dynamo:"NCTrigger,omitempty" json:"NCTrigger"`
 	NewCreationsTeam           string `dynamo:"NewCreationsTeam,omitempty" json:"NewCreationsTeam"`
 	OurCodeSlackResponse       string `dynamo:"OurCodeSlackResponse,omitempty" json:"OurCodeSlackResponse"`
+	ServeTeam                  string `dynamo:"ServeTeam,omitempty" json:"ServeTeam"`
 	SlackAppID                 string `dynamo:"SlackAppID,omitempty" json:"SlackAppID"`
 	SlackBotToken              string `dynamo:"SlackBotToken,omitempty" json:"SlackBotToken"`
 	SlackClientID              string `dynamo:"SlackClientID,omitempty" json:"SlackClientID"`
