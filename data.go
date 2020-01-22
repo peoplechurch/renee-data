@@ -95,6 +95,7 @@ type MemberGroupData struct {
 }
 
 type NewCreation struct {
+	FollowUp      bool           `dynamo:"FollowUp,omitempty" json:"FollowUp,omitempty"`
 	Status        bool           `dynamo:"Status,omitempty" json:"Status,omitempty"`
 	FirstDecision NCFirstTime    `dynamo:"FirstDecision,omitempty" json:"FirstDecision,omitempty"`
 	Rededication  NCRededication `dynamo:"Rededication,omitempty" json:"Rededication,omitempty"`
