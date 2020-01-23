@@ -44,6 +44,7 @@ type Account struct {
 type Campus struct {
 	Account                    string `dynamo:"Account,omitempty" json:"Account"`
 	AccountName                string `dynamo:"AccountName,omitempty" json:"AccountName"`
+	BibleClaimChannel          string `dynamo:"BibleClaimChannel,omitempty" json:"BibleClaimChannel"`
 	ClerkNumber                string `dynamo:"ClerkNumber,omitempty" json:"ClerkNumber"`
 	CurrentGrowGroupTier       []int  `dynamo:"CurrentGrowGroupTier,omitempty" json:"CurrentGrowGroupTier"`
 	DigitalChurchSlackResponse string `dynamo:"DigitalChurchSlackResponse,omitempty" json:"DigitalChurchSlackResponse"`
@@ -58,6 +59,7 @@ type Campus struct {
 	InterestGroupTeam          string `dynamo:"InterestGroupTeam,omitempty" json:"InterestGroupTeam"`
 	Name                       string `dynamo:"Name,omitempty" json:"Name"`
 	NCTrigger                  string `dynamo:"NCTrigger,omitempty" json:"NCTrigger"`
+	NCChannel                  string `dynamo:"NCChannel,omitempty" json:"NCChannel"`
 	NewCreationsTeam           string `dynamo:"NewCreationsTeam,omitempty" json:"NewCreationsTeam"`
 	OurCodeSlackResponse       string `dynamo:"OurCodeSlackResponse,omitempty" json:"OurCodeSlackResponse"`
 	ServeTeam                  string `dynamo:"ServeTeam,omitempty" json:"ServeTeam"`
