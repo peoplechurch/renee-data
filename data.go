@@ -134,6 +134,7 @@ type Groups struct {
 	Campus          string                       `dynamo:"Campus" json:"Campus,omitempty"`
 	CampusName      string                       `dynamo:"CampusName" json:"CampusName,omitempty"`
 	Capacity        GroupCapacity                `dynamo:"Capacity, omitempty" json:"Capacity,omitempty"`
+	ConfirmResponse string                       `dynamo:"ConfirmResponse, omitempty" json:"ConfirmResponse,omitempty"`
 	CreatedAt       int64                        `dynamo:"CreatedAt" json:"CreatedAt,omitempty"`
 	Details         GroupDetails                 `dynamo:"Details,omitempty" json:"Details,omitempty"`
 	GroupName       string                       `dynamo:"GroupName" json:"GroupName,omitempty"`
