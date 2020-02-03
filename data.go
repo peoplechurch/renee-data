@@ -150,6 +150,7 @@ type Groups struct {
 	Leaders         []Member                     `dynamo:"Leaders,omitempty" json:"Leaders,omitempty"`
 	UUID            string                       `dynamo:"UUID" json:"UUID"`
 	Oversights      []Member                     `dynamo:"Oversights,omitempty" json:"Oversights,omitempty"`
+	Perpetual       bool                         `dynamo:"Perpetual,omitempty" json:"Perpetual,omitempty"`
 	Private         bool                         `dynamo:"Private,omitempty" json:"Private,omitempty"`
 	Registrations   []Member                     `dynamo:"Registrations,omitempty" json:"Registrations,omitempty"`
 	RegistrationURL string                       `dynamo:"RegistrationURL,omitempty" json:"RegistrationURL,omitempty"`
