@@ -76,7 +76,7 @@ type Campus struct {
 	SlackTeamID                string `dynamo:"SlackTeamID,omitempty" json:"SlackTeamID"`
 	SlackURL                   string `dynamo:"SlackURL,omitempty" json:"SlackURL"`
 	SlackVerificationToken     string `dynamo:"SlackVerificationToken,omitempty" json:"SlackVerificationToken"`
-	TimeZoneCode               string `dynamo: "TimeZoneCode,omitempty" json:"TimeZoneCode"`
+	TimeZone                   string `dynamo: "TimeZoneCode,omitempty" json:"TimeZoneCode"`
 	UUID                       string `dynamo:"UUID,omitempty" json:"UUID"`
 	WelcomeSlackMessage        string `dynamo:"WelcomeSlackMessage,omitempty" json:"WelcomeSlackMessage"`
 }
