@@ -30,14 +30,14 @@ type Member struct {
 	SlackChannelID      string              `dynamo:"SlackChannelID,omitempty" json:"SlackChannelID,omitempty"`
 	SpiritualGifts      SpiritualGiftsData  `dynamo:"SpiritualGifts,omitempty" json:"SpiritualGifts,omitempty"`
 	ThisIsHome          ThisIsHome          `dynamo:"ThisIsHome,omitempty" json:"ThisIsHome,omitempty"`
-	UUID                string              `dynamo:"UUID,omitempty" json:"UUID,omitempty"`
+	UUID                string              `dynamo:"UUID,hash" json:"UUID"`
 	Volunteer           Group               `dynamo:"Volunteer,omitempty" json:"Volunteer,omitempty"`
 }
 
 // this is how a tenant account is stored
 type Account struct {
 	Name string `dynamo:"Name,omitempty" json:"Name"`
-	UUID string `dynamo:"UUID,omitempty" json:"UUID"`
+	UUID string `dynamo:"UUID,hash" json:"UUID"`
 }
 
 // this is how an individual campus data is stored to determine what account renee belongs to
@@ -77,7 +77,7 @@ type Campus struct {
 	SlackURL                   string `dynamo:"SlackURL,omitempty" json:"SlackURL"`
 	SlackVerificationToken     string `dynamo:"SlackVerificationToken,omitempty" json:"SlackVerificationToken"`
 	TimeZone                   string `dynamo: "TimeZone,omitempty" json:"TimeZone"`
-	UUID                       string `dynamo:"UUID,omitempty" json:"UUID"`
+	UUID                       string `dynamo:"UUID,hash" json:"UUID"`
 	WelcomeSlackMessage        string `dynamo:"WelcomeSlackMessage,omitempty" json:"WelcomeSlackMessage"`
 }
 
@@ -149,7 +149,7 @@ type Groups struct {
 	GroupName       string                       `dynamo:"GroupName" json:"GroupName,omitempty"`
 	LastUpdated     int64                        `dynamo:"LastUpdated" json:"LastUpdated,omitempty"`
 	Leaders         []Member                     `dynamo:"Leaders,omitempty" json:"Leaders,omitempty"`
-	UUID            string                       `dynamo:"UUID" json:"UUID"`
+	UUID            string                       `dynamo:"UUID,hash" json:"UUID"`
 	Oversights      []Member                     `dynamo:"Oversights,omitempty" json:"Oversights,omitempty"`
 	Perpetual       bool                         `dynamo:"Perpetual,omitempty" json:"Perpetual,omitempty"`
 	Private         bool                         `dynamo:"Private,omitempty" json:"Private,omitempty"`
