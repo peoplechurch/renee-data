@@ -36,8 +36,10 @@ type Member struct {
 
 // this is how a tenant account is stored
 type Account struct {
-	Name string `dynamo:"Name,omitempty" json:"Name"`
-	UUID string `dynamo:"UUID,hash" json:"UUID"`
+	Name        string `dynamo:"Name,omitempty" json:"Name"`
+	UUID        string `dynamo:"UUID,hash" json:"UUID"`
+	CreatedAt   int64  `dynamo:"CreatedAt,omitempty" json:"CreatedAt,omitempty"`
+	LastUpdated int64  `dynamo:"LastUpdated,omitempty" json:"LastUpdated,omitempty"`
 }
 
 // this is how an individual campus data is stored to determine what account renee belongs to
@@ -47,6 +49,7 @@ type Campus struct {
 	BibleClaimChannel          string `dynamo:"BibleClaimChannel,omitempty" json:"BibleClaimChannel"`
 	ClerkNumber                string `dynamo:"ClerkNumber,omitempty" json:"ClerkNumber"`
 	CurrentGrowGroupTier       []int  `dynamo:"CurrentGrowGroupTier,omitempty" json:"CurrentGrowGroupTier"`
+	CreatedAt                  int64  `dynamo:"CreatedAt,omitempty" json:"CreatedAt,omitempty"`
 	DigitalChurchSlackResponse string `dynamo:"DigitalChurchSlackResponse,omitempty" json:"DigitalChurchSlackResponse"`
 	EventsTeam                 string `dynamo:"EventsTeam,omitempty" json:"EventsTeam"`
 	GiveTextResponse           string `dynamo:"GiveTextResponse,omitempty" json:"GiveTextResponse"`
@@ -57,6 +60,7 @@ type Campus struct {
 	HealthTeam                 string `dynamo:"HealthTeam,omitempty" json:"HealthTeam"`
 	HomeTrigger                string `dynamo:"HomeTrigger,omitempty" json:"HomeTrigger"`
 	InterestGroupTeam          string `dynamo:"InterestGroupTeam,omitempty" json:"InterestGroupTeam"`
+	LastUpdated                int64  `dynamo:"LastUpdated,omitempty" json:"LastUpdated,omitempty"`
 	Name                       string `dynamo:"Name,omitempty" json:"Name"`
 	NewPersonChannel           string `dynamo:"NewPersonChannel,omitempty" json:"NewPersonChannel"`
 	NewPersonContactChannel    string `dynamo:"NewPersonContactChannel,omitempty" json:"NewPersonContactChannel"`
@@ -76,7 +80,7 @@ type Campus struct {
 	SlackTeamID                string `dynamo:"SlackTeamID,omitempty" json:"SlackTeamID"`
 	SlackURL                   string `dynamo:"SlackURL,omitempty" json:"SlackURL"`
 	SlackVerificationToken     string `dynamo:"SlackVerificationToken,omitempty" json:"SlackVerificationToken"`
-	TimeZone                   string `dynamo: "TimeZone,omitempty" json:"TimeZone"`
+	TimeZone                   string `dynamo:"TimeZone,omitempty" json:"TimeZone"`
 	UUID                       string `dynamo:"UUID,hash" json:"UUID"`
 	WelcomeSlackMessage        string `dynamo:"WelcomeSlackMessage,omitempty" json:"WelcomeSlackMessage"`
 }
