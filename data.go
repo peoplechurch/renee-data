@@ -30,14 +30,16 @@ type Member struct {
 	SlackChannelID      string              `dynamo:"SlackChannelID,omitempty" json:"SlackChannelID,omitempty"`
 	SpiritualGifts      SpiritualGiftsData  `dynamo:"SpiritualGifts,omitempty" json:"SpiritualGifts,omitempty"`
 	ThisIsHome          ThisIsHome          `dynamo:"ThisIsHome,omitempty" json:"ThisIsHome,omitempty"`
-	UUID                string              `dynamo:"UUID,omitempty" json:"UUID,omitempty"`
+	UUID                string              `dynamo:"UUID,hash" json:"UUID"`
 	Volunteer           Group               `dynamo:"Volunteer,omitempty" json:"Volunteer,omitempty"`
 }
 
 // this is how a tenant account is stored
 type Account struct {
-	Name string `dynamo:"Name,omitempty" json:"Name"`
-	UUID string `dynamo:"UUID,omitempty" json:"UUID"`
+	Name        string `dynamo:"Name,omitempty" json:"Name"`
+	UUID        string `dynamo:"UUID,hash" json:"UUID"`
+	CreatedAt   int64  `dynamo:"CreatedAt,omitempty" json:"CreatedAt,omitempty"`
+	LastUpdated int64  `dynamo:"LastUpdated,omitempty" json:"LastUpdated,omitempty"`
 }
 
 // this is how an individual campus data is stored to determine what account renee belongs to
@@ -47,10 +49,11 @@ type Campus struct {
 	BibleClaimChannel          string `dynamo:"BibleClaimChannel,omitempty" json:"BibleClaimChannel"`
 	ClerkNumber                string `dynamo:"ClerkNumber,omitempty" json:"ClerkNumber"`
 	CurrentGrowGroupTier       []int  `dynamo:"CurrentGrowGroupTier,omitempty" json:"CurrentGrowGroupTier"`
+	CreatedAt                  int64  `dynamo:"CreatedAt,omitempty" json:"CreatedAt,omitempty"`
 	DigitalChurchSlackResponse string `dynamo:"DigitalChurchSlackResponse,omitempty" json:"DigitalChurchSlackResponse"`
 	EventsTeam                 string `dynamo:"EventsTeam,omitempty" json:"EventsTeam"`
 
-	GiveTextResponse  string `dynamo:"GiveTextResponse,omitempty" json:"GiveTextResponse"`
+  GiveTextResponse  string `dynamo:"GiveTextResponse,omitempty" json:"GiveTextResponse"`
 	GiveTrigger       string `dynamo:"GiveTrigger,omitempty" json:"GiveTrigger"`
 	GiveSlackResponse string `dynamo:"GiveSlackResponse,omitempty" json:"GiveSlackResponse"`
 
@@ -181,7 +184,7 @@ type Groups struct {
 	GroupName       string                       `dynamo:"GroupName" json:"GroupName,omitempty"`
 	LastUpdated     int64                        `dynamo:"LastUpdated" json:"LastUpdated,omitempty"`
 	Leaders         []Member                     `dynamo:"Leaders,omitempty" json:"Leaders,omitempty"`
-	UUID            string                       `dynamo:"UUID" json:"UUID"`
+	UUID            string                       `dynamo:"UUID,hash" json:"UUID"`
 	Oversights      []Member                     `dynamo:"Oversights,omitempty" json:"Oversights,omitempty"`
 	Perpetual       bool                         `dynamo:"Perpetual,omitempty" json:"Perpetual,omitempty"`
 	Private         bool                         `dynamo:"Private,omitempty" json:"Private,omitempty"`
