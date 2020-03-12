@@ -53,17 +53,19 @@ type Campus struct {
 	DigitalChurchSlackResponse string `dynamo:"DigitalChurchSlackResponse,omitempty" json:"DigitalChurchSlackResponse"`
 	EventsTeam                 string `dynamo:"EventsTeam,omitempty" json:"EventsTeam"`
 
-  GiveTextResponse  string `dynamo:"GiveTextResponse,omitempty" json:"GiveTextResponse"`
+        GiveTextResponse  string `dynamo:"GiveTextResponse,omitempty" json:"GiveTextResponse"`
 	GiveTrigger       string `dynamo:"GiveTrigger,omitempty" json:"GiveTrigger"`
 	GiveSlackResponse string `dynamo:"GiveSlackResponse,omitempty" json:"GiveSlackResponse"`
 
 	GrowthTrackName         string `dynamo:"GrowthTrackName,omitempty" json:"GrowthTrackName"`
 	GrowthTrackTeam         string `dynamo:"GrowthTrackTeam,omitempty" json:"GrowthTrackTeam"`
-	GrowthTrackWeek1Name    string `dynamo:"GrowthTrackWeek1Name,omitempty" json:"GrowthTrackWeek1Name"`
-	GrowthTrackWeek2Name    string `dynamo:"GrowthTrackWeek2Name,omitempty" json:"GrowthTrackWeek2Name"`
-	GrowthTrackWeek1Command string `dynamo:"GrowthTrackWeek1Command,omitempty" json:"GrowthTrackWeek1Command"`
-	GrowthTrackWeek2Command string `dynamo:"GrowthTrackWeek2Command,omitempty" json:"GrowthTrackWeek2Command"`
-
+	GrowthTrackW1Name       string `dynamo:"GrowthTrackW1Name,omitempty" json:"GrowthTrackW1Name"`
+	GrowthTrackW2Name       string `dynamo:"GrowthTrackW2Name,omitempty" json:"GrowthTrackW2Name"`
+	GrowthTrackW1Command    string `dynamo:"GrowthTrackW1Command,omitempty" json:"GrowthTrackW1Command"`
+	GrowthTrackW2Command    string `dynamo:"GrowthTrackW2Command,omitempty" json:"GrowthTrackW2Command"`
+	// Message to send when someone has already completed week 1 of Growth Track
+	GrowthTrackW1Redundant  string `dynamo:"GrowthTrackW1Redundant,omitempty" json:"GrowthTrackW1Redundant"`
+	
 	GrowGroupDescription string `dynamo:"GrowGroupDescription,omitempty" json:"GrowGroupDescription"`
 	GrowGroupName        string `dynamo:"GrowGroupName,omitempty" json:"GrowGroupName"`
 	GrowGroupTeam        string `dynamo:"GrowGroupTeam,omitempty" json:"GrowGroupTeam"`
@@ -108,7 +110,6 @@ type Campus struct {
 	SlackURL               string `dynamo:"SlackURL,omitempty" json:"SlackURL"`
 	SlackVerificationToken string `dynamo:"SlackVerificationToken,omitempty" json:"SlackVerificationToken"`
 
-	SlashHome  string `dynamo:"SlashHome,omitempty" json:"SlashHome"`
 	SlashRenee string `dynamo:"SlashRenee,omitempty" json:"SlashRenee"`
 
 	TimeZone            string `dynamo:"TimeZone,omitempty" json:"TimeZone"`
