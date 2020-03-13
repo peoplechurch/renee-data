@@ -65,10 +65,10 @@ type Campus struct {
 	GrowthTrackCommand   string `dynamo:"GrowthTrackCommand,omitempty" json:"GrowthTrackCommand"`
 	GrowthTrackName      string `dynamo:"GrowthTrackName,omitempty" json:"GrowthTrackName"`
 	GrowthTrackTeam      string `dynamo:"GrowthTrackTeam,omitempty" json:"GrowthTrackTeam"`
-	GrowthTrackW1Name    string `dynamo:"GrowthTrackWeek1Name,omitempty" json:"GrowthTrackWeek1Name"`
-	GrowthTrackW2Name    string `dynamo:"GrowthTrackWeek2Name,omitempty" json:"GrowthTrackWeek2Name"`
-	GrowthTrackW1Command string `dynamo:"GrowthTrackWeek1Command,omitempty" json:"GrowthTrackWeek1Command"`
-	GrowthTrackW2Command string `dynamo:"GrowthTrackWeek2Command,omitempty" json:"GrowthTrackWeek2Command"`
+	GrowthTrackW1Name    string `dynamo:"GrowthTrackW1Name,omitempty" json:"GrowthTrackW1Name"`
+	GrowthTrackW2Name    string `dynamo:"GrowthTrackW2Name,omitempty" json:"GrowthTrackW2Name"`
+	GrowthTrackW1Command string `dynamo:"GrowthTrackW1Command,omitempty" json:"GrowthTrackW1Command"`
+	GrowthTrackW2Command string `dynamo:"GrowthTrackW2Command,omitempty" json:"GrowthTrackW2Command"`
 	// Message to send when someone has already completed week 1 of Growth Track
 	GrowthTrackW1Redundant string `dynamo:"GrowthTrackW1Redundant,omitempty" json:"GrowthTrackW1Redundant"`
 
