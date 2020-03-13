@@ -40,20 +40,26 @@ type Account struct {
 	UUID string `dynamo:"UUID,omitempty" json:"UUID"`
 }
 
-// this is how an individual campus data is stored to determine what account renee belongs to
+/// this is how an individual campus data is stored to determine what account renee belongs to
 type Campus struct {
-	Account                    string `dynamo:"Account,omitempty" json:"Account"`
-	AccountName                string `dynamo:"AccountName,omitempty" json:"AccountName"`
-	BibleClaimChannel          string `dynamo:"BibleClaimChannel,omitempty" json:"BibleClaimChannel"`
-	ClerkNumber                string `dynamo:"ClerkNumber,omitempty" json:"ClerkNumber"`
-	CurrentGrowGroupTier       []int  `dynamo:"CurrentGrowGroupTier,omitempty" json:"CurrentGrowGroupTier"`
-	DigitalChurchSlackResponse string `dynamo:"DigitalChurchSlackResponse,omitempty" json:"DigitalChurchSlackResponse"`
-	EventsTeam                 string `dynamo:"EventsTeam,omitempty" json:"EventsTeam"`
+	Account              string `dynamo:"Account,omitempty" json:"Account"`
+	AccountName          string `dynamo:"AccountName,omitempty" json:"AccountName"`
+	BibleClaimChannel    string `dynamo:"BibleClaimChannel,omitempty" json:"BibleClaimChannel"`
+	ClerkNumber          string `dynamo:"ClerkNumber,omitempty" json:"ClerkNumber"`
+	CurrentGrowGroupTier []int  `dynamo:"CurrentGrowGroupTier,omitempty" json:"CurrentGrowGroupTier"`
 
+	DigitalChurchSlackResponse string `dynamo:"DigitalChurchSlackResponse,omitempty" json:"DigitalChurchSlackResponse"`
+	DigitalChurchCommand       string `dynamo:"DigitalChurchCommand,omitempty" json:"DigitalChurchCommand"`
+
+	EventCommand string `dynamo:"EventsCommand,omitempty" json:"EventsCommand"`
+	EventsTeam   string `dynamo:"EventsTeam,omitempty" json:"EventsTeam"`
+
+	GiveCommand       string `dynamo:"GiveCommand,omitempty" json:"GiveCommand"`
 	GiveTextResponse  string `dynamo:"GiveTextResponse,omitempty" json:"GiveTextResponse"`
 	GiveTrigger       string `dynamo:"GiveTrigger,omitempty" json:"GiveTrigger"`
 	GiveSlackResponse string `dynamo:"GiveSlackResponse,omitempty" json:"GiveSlackResponse"`
 
+	GrowthTrackCommand      string `dynamo:"GrowthTrackCommand,omitempty" json:"GrowthTrackCommand"`
 	GrowthTrackName         string `dynamo:"GrowthTrackName,omitempty" json:"GrowthTrackName"`
 	GrowthTrackTeam         string `dynamo:"GrowthTrackTeam,omitempty" json:"GrowthTrackTeam"`
 	GrowthTrackWeek1Name    string `dynamo:"GrowthTrackWeek1Name,omitempty" json:"GrowthTrackWeek1Name"`
@@ -61,9 +67,11 @@ type Campus struct {
 	GrowthTrackWeek1Command string `dynamo:"GrowthTrackWeek1Command,omitempty" json:"GrowthTrackWeek1Command"`
 	GrowthTrackWeek2Command string `dynamo:"GrowthTrackWeek2Command,omitempty" json:"GrowthTrackWeek2Command"`
 
-	GrowGroupDescription string `dynamo:"GrowGroupDescription,omitempty" json:"GrowGroupDescription"`
-	GrowGroupName        string `dynamo:"GrowGroupName,omitempty" json:"GrowGroupName"`
-	GrowGroupTeam        string `dynamo:"GrowGroupTeam,omitempty" json:"GrowGroupTeam"`
+	GrowGroupCommand      string `dynamo:"GrowGroupCommand,omitempty" json:"GrowGroupCommand"`
+	GrowGroupDescription  string `dynamo:"GrowGroupDescription,omitempty" json:"GrowGroupDescription"`
+	GrowGroupName         string `dynamo:"GrowGroupName,omitempty" json:"GrowGroupName"`
+	GrowGroupStudyKeyWord string `dynamo:"GrowGroupStudyKeyWord,omitempty" json:"GrowGroupStudyKeyWord"`
+	GrowGroupTeam         string `dynamo:"GrowGroupTeam,omitempty" json:"GrowGroupTeam"`
 
 	HealthTeam  string `dynamo:"HealthTeam,omitempty" json:"HealthTeam"`
 	HomeTrigger string `dynamo:"HomeTrigger,omitempty" json:"HomeTrigger"`
@@ -78,6 +86,7 @@ type Campus struct {
 	NewPersonContactChannel string `dynamo:"NewPersonContactChannel,omitempty" json:"NewPersonContactChannel"`
 	NCTrigger               string `dynamo:"NCTrigger,omitempty" json:"NCTrigger"`
 	NCChannel               string `dynamo:"NCChannel,omitempty" json:"NCChannel"`
+	NewCreationsDinnerName  string `dynamo:"NewCreationsDinnerName,omitempty" json:"NewCreationsDinnerName"`
 	NewCreationsTeam        string `dynamo:"NewCreationsTeam,omitempty" json:"NewCreationsTeam"`
 
 	MarketingPlatforms   []string `dynamo:"MarketingPlatforms,omitempty" json:"MarketingPlatforms"`
@@ -86,8 +95,10 @@ type Campus struct {
 	OnboardGrowthTrack   string   `dynamo:"OnboardGrowthTrack,omitempty" json:"OnboardGrowthTrack"`
 	OnboardLookingAround string   `dynamo:"OnboardLookingAround,omitempty" json:"OnboardLookingAround"`
 
+	OurCodeCommand       string `dynamo:"OurCodeCommand,omitempty" json:"OurCodeCommand"`
 	OurCodeSlackResponse string `dynamo:"OurCodeSlackResponse,omitempty" json:"OurCodeSlackResponse"`
 
+	ServeCommand                string `dynamo:"ServeCommand,omitempty" json:"ServeCommand"`
 	ServeTeam                   string `dynamo:"ServeTeam,omitempty" json:"ServeTeam"`
 	ServeTeamDescription        string `dynamo:"ServeTeamDescription,omitempty" json:"ServeTeamDescription"`
 	ServeDescriptionGrowthTrack string `dynamo:"ServeDescriptionGrowthTrack,omitempty" json:"ServeDescriptionGrowthTrack"`
@@ -105,7 +116,6 @@ type Campus struct {
 	SlackURL               string `dynamo:"SlackURL,omitempty" json:"SlackURL"`
 	SlackVerificationToken string `dynamo:"SlackVerificationToken,omitempty" json:"SlackVerificationToken"`
 
-	SlashHome  string `dynamo:"SlashHome,omitempty" json:"SlashHome"`
 	SlashRenee string `dynamo:"SlashRenee,omitempty" json:"SlashRenee"`
 
 	TimeZone            string `dynamo:"TimeZone,omitempty" json:"TimeZone"`
