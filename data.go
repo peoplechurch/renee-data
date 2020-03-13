@@ -42,47 +42,90 @@ type Account struct {
 	LastUpdated int64  `dynamo:"LastUpdated,omitempty" json:"LastUpdated,omitempty"`
 }
 
-// this is how an individual campus data is stored to determine what account renee belongs to
+/// this is how an individual campus data is stored to determine what account renee belongs to
 type Campus struct {
-	Account                    string `dynamo:"Account,omitempty" json:"Account"`
-	AccountName                string `dynamo:"AccountName,omitempty" json:"AccountName"`
-	BibleClaimChannel          string `dynamo:"BibleClaimChannel,omitempty" json:"BibleClaimChannel"`
-	ClerkNumber                string `dynamo:"ClerkNumber,omitempty" json:"ClerkNumber"`
-	CurrentGrowGroupTier       []int  `dynamo:"CurrentGrowGroupTier,omitempty" json:"CurrentGrowGroupTier"`
-	CreatedAt                  int64  `dynamo:"CreatedAt,omitempty" json:"CreatedAt,omitempty"`
+	Account              string `dynamo:"Account,omitempty" json:"Account"`
+	AccountName          string `dynamo:"AccountName,omitempty" json:"AccountName"`
+	BibleClaimChannel    string `dynamo:"BibleClaimChannel,omitempty" json:"BibleClaimChannel"`
+	ClerkNumber          string `dynamo:"ClerkNumber,omitempty" json:"ClerkNumber"`
+	CurrentGrowGroupTier []int  `dynamo:"CurrentGrowGroupTier,omitempty" json:"CurrentGrowGroupTier"`
+	CreatedAt            int64  `dynamo:"CreatedAt,omitempty" json:"CreatedAt,omitempty"`
+
 	DigitalChurchSlackResponse string `dynamo:"DigitalChurchSlackResponse,omitempty" json:"DigitalChurchSlackResponse"`
-	EventsTeam                 string `dynamo:"EventsTeam,omitempty" json:"EventsTeam"`
-	GiveTextResponse           string `dynamo:"GiveTextResponse,omitempty" json:"GiveTextResponse"`
-	GiveTrigger                string `dynamo:"GiveTrigger,omitempty" json:"GiveTrigger"`
-	GiveSlackResponse          string `dynamo:"GiveSlackResponse,omitempty" json:"GiveSlackResponse"`
-	GrowthTrackTeam            string `dynamo:"GrowthTrackTeam,omitempty" json:"GrowthTrackTeam"`
-	GrowGroupTeam              string `dynamo:"GrowGroupTeam,omitempty" json:"GrowGroupTeam"`
-	HealthTeam                 string `dynamo:"HealthTeam,omitempty" json:"HealthTeam"`
-	HomeTrigger                string `dynamo:"HomeTrigger,omitempty" json:"HomeTrigger"`
-	InterestGroupTeam          string `dynamo:"InterestGroupTeam,omitempty" json:"InterestGroupTeam"`
-	LastUpdated                int64  `dynamo:"LastUpdated,omitempty" json:"LastUpdated,omitempty"`
-	Name                       string `dynamo:"Name,omitempty" json:"Name"`
-	NewPersonChannel           string `dynamo:"NewPersonChannel,omitempty" json:"NewPersonChannel"`
-	NewPersonContactChannel    string `dynamo:"NewPersonContactChannel,omitempty" json:"NewPersonContactChannel"`
-	NCTrigger                  string `dynamo:"NCTrigger,omitempty" json:"NCTrigger"`
-	NCChannel                  string `dynamo:"NCChannel,omitempty" json:"NCChannel"`
-	NewCreationsTeam           string `dynamo:"NewCreationsTeam,omitempty" json:"NewCreationsTeam"`
-	OurCodeSlackResponse       string `dynamo:"OurCodeSlackResponse,omitempty" json:"OurCodeSlackResponse"`
-	ServeTeam                  string `dynamo:"ServeTeam,omitempty" json:"ServeTeam"`
-	SlackAppID                 string `dynamo:"SlackAppID,omitempty" json:"SlackAppID"`
-	SlackBotToken              string `dynamo:"SlackBotToken,omitempty" json:"SlackBotToken"`
-	SlackClientID              string `dynamo:"SlackClientID,omitempty" json:"SlackClientID"`
-	SlackClientSecret          string `dynamo:"SlackClientSecret,omitempty" json:"SlackClientSecret"`
-	SlackGeneralChannelID      string `dynamo:"SlackGeneralChannelID,omitempty" json:"SlackGeneralChannelID"`
-	SlackInviteToken           string `dynamo:"SlackInviteToken,omitempty" json:"SlackInviteToken"`
-	SlackOAuthToken            string `dynamo:"SlackOAuthToken,omitempty" json:"SlackOAuthToken"`
-	SlackSigningSecret         string `dynamo:"SlackSigningSecret,omitempty" json:"SlackSigningSecret"`
-	SlackTeamID                string `dynamo:"SlackTeamID,omitempty" json:"SlackTeamID"`
-	SlackURL                   string `dynamo:"SlackURL,omitempty" json:"SlackURL"`
-	SlackVerificationToken     string `dynamo:"SlackVerificationToken,omitempty" json:"SlackVerificationToken"`
-	TimeZone                   string `dynamo:"TimeZone,omitempty" json:"TimeZone"`
-	UUID                       string `dynamo:"UUID,hash" json:"UUID"`
-	WelcomeSlackMessage        string `dynamo:"WelcomeSlackMessage,omitempty" json:"WelcomeSlackMessage"`
+	DigitalChurchCommand       string `dynamo:"DigitalChurchCommand,omitempty" json:"DigitalChurchCommand"`
+
+	EventCommand string `dynamo:"EventsCommand,omitempty" json:"EventsCommand"`
+	EventsTeam   string `dynamo:"EventsTeam,omitempty" json:"EventsTeam"`
+
+	GiveCommand       string `dynamo:"GiveCommand,omitempty" json:"GiveCommand"`
+	GiveTextResponse  string `dynamo:"GiveTextResponse,omitempty" json:"GiveTextResponse"`
+	GiveTrigger       string `dynamo:"GiveTrigger,omitempty" json:"GiveTrigger"`
+	GiveSlackResponse string `dynamo:"GiveSlackResponse,omitempty" json:"GiveSlackResponse"`
+
+	GrowthTrackCommand   string `dynamo:"GrowthTrackCommand,omitempty" json:"GrowthTrackCommand"`
+	GrowthTrackName      string `dynamo:"GrowthTrackName,omitempty" json:"GrowthTrackName"`
+	GrowthTrackTeam      string `dynamo:"GrowthTrackTeam,omitempty" json:"GrowthTrackTeam"`
+	GrowthTrackW1Name    string `dynamo:"GrowthTrackWeek1Name,omitempty" json:"GrowthTrackWeek1Name"`
+	GrowthTrackW2Name    string `dynamo:"GrowthTrackWeek2Name,omitempty" json:"GrowthTrackWeek2Name"`
+	GrowthTrackW1Command string `dynamo:"GrowthTrackWeek1Command,omitempty" json:"GrowthTrackWeek1Command"`
+	GrowthTrackW2Command string `dynamo:"GrowthTrackWeek2Command,omitempty" json:"GrowthTrackWeek2Command"`
+	// Message to send when someone has already completed week 1 of Growth Track
+	GrowthTrackW1Redundant string `dynamo:"GrowthTrackW1Redundant,omitempty" json:"GrowthTrackW1Redundant"`
+
+	GrowGroupCommand      string `dynamo:"GrowGroupCommand,omitempty" json:"GrowGroupCommand"`
+	GrowGroupDescription  string `dynamo:"GrowGroupDescription,omitempty" json:"GrowGroupDescription"`
+	GrowGroupName         string `dynamo:"GrowGroupName,omitempty" json:"GrowGroupName"`
+	GrowGroupStudyKeyWord string `dynamo:"GrowGroupStudyKeyWord,omitempty" json:"GrowGroupStudyKeyWord"`
+	GrowGroupTeam         string `dynamo:"GrowGroupTeam,omitempty" json:"GrowGroupTeam"`
+
+	HealthTeam  string `dynamo:"HealthTeam,omitempty" json:"HealthTeam"`
+	HomeTrigger string `dynamo:"HomeTrigger,omitempty" json:"HomeTrigger"`
+
+	InterestGroupDescription string `dynamo:"InterestGroupDescription,omitempty" json:"InterestGroupDescription"`
+	InterestGroupName        string `dynamo:"InterestGroupName,omitempty" json:"InterestGroupName"`
+	InterestGroupTeam        string `dynamo:"InterestGroupTeam,omitempty" json:"InterestGroupTeam"`
+
+	Name string `dynamo:"Name,omitempty" json:"Name"`
+
+	NewPersonChannel        string `dynamo:"NewPersonChannel,omitempty" json:"NewPersonChannel"`
+	NewPersonContactChannel string `dynamo:"NewPersonContactChannel,omitempty" json:"NewPersonContactChannel"`
+	NCTrigger               string `dynamo:"NCTrigger,omitempty" json:"NCTrigger"`
+	NCChannel               string `dynamo:"NCChannel,omitempty" json:"NCChannel"`
+	NewCreationsDinnerName  string `dynamo:"NewCreationsDinnerName,omitempty" json:"NewCreationsDinnerName"`
+	NewCreationsTeam        string `dynamo:"NewCreationsTeam,omitempty" json:"NewCreationsTeam"`
+
+	MarketingPlatforms   []string `dynamo:"MarketingPlatforms,omitempty" json:"MarketingPlatforms"`
+	OnboardChatWithTeam  string   `dynamo:"OnboardChatWithTeam,omitempty" json:"OnboardChatWithTeam"`
+	OnboardGrowGroups    string   `dynamo:"OnboardGrowGroups,omitempty" json:"OnboardGrowGroups"`
+	OnboardGrowthTrack   string   `dynamo:"OnboardGrowthTrack,omitempty" json:"OnboardGrowthTrack"`
+	OnboardLookingAround string   `dynamo:"OnboardLookingAround,omitempty" json:"OnboardLookingAround"`
+
+	OurCodeCommand       string `dynamo:"OurCodeCommand,omitempty" json:"OurCodeCommand"`
+	OurCodeSlackResponse string `dynamo:"OurCodeSlackResponse,omitempty" json:"OurCodeSlackResponse"`
+
+	ServeCommand                string `dynamo:"ServeCommand,omitempty" json:"ServeCommand"`
+	ServeTeam                   string `dynamo:"ServeTeam,omitempty" json:"ServeTeam"`
+	ServeTeamDescription        string `dynamo:"ServeTeamDescription,omitempty" json:"ServeTeamDescription"`
+	ServeDescriptionGrowthTrack string `dynamo:"ServeDescriptionGrowthTrack,omitempty" json:"ServeDescriptionGrowthTrack"`
+	ServeTeamName               string `dynamo:"ServeTeamName,omitempty" json:"ServeTeamName"`
+
+	SlackAppID             string `dynamo:"SlackAppID,omitempty" json:"SlackAppID"`
+	SlackBotToken          string `dynamo:"SlackBotToken,omitempty" json:"SlackBotToken"`
+	SlackClientID          string `dynamo:"SlackClientID,omitempty" json:"SlackClientID"`
+	SlackClientSecret      string `dynamo:"SlackClientSecret,omitempty" json:"SlackClientSecret"`
+	SlackGeneralChannelID  string `dynamo:"SlackGeneralChannelID,omitempty" json:"SlackGeneralChannelID"`
+	SlackInviteToken       string `dynamo:"SlackInviteToken,omitempty" json:"SlackInviteToken"`
+	SlackOAuthToken        string `dynamo:"SlackOAuthToken,omitempty" json:"SlackOAuthToken"`
+	SlackSigningSecret     string `dynamo:"SlackSigningSecret,omitempty" json:"SlackSigningSecret"`
+	SlackTeamID            string `dynamo:"SlackTeamID,omitempty" json:"SlackTeamID"`
+	SlackURL               string `dynamo:"SlackURL,omitempty" json:"SlackURL"`
+	SlackVerificationToken string `dynamo:"SlackVerificationToken,omitempty" json:"SlackVerificationToken"`
+
+	SlashRenee string `dynamo:"SlashRenee,omitempty" json:"SlashRenee"`
+
+	TimeZone            string `dynamo:"TimeZone,omitempty" json:"TimeZone"`
+	UUID                string `dynamo:"UUID,omitempty" json:"UUID"`
+	WelcomeSlackMessage string `dynamo:"WelcomeSlackMessage,omitempty" json:"WelcomeSlackMessage"`
 }
 
 type SpiritualGiftsData struct {
