@@ -81,6 +81,7 @@ type Campus struct {
 	HealthTeam  string `dynamo:"HealthTeam,omitempty" json:"HealthTeam"`
 	HomeTrigger string `dynamo:"HomeTrigger,omitempty" json:"HomeTrigger"`
 
+	InterestGroupCommand     string `dynamo:"InterestGroupCommand,omitempty" json:"InterestGroupCommand"`
 	InterestGroupDescription string `dynamo:"InterestGroupDescription,omitempty" json:"InterestGroupDescription"`
 	InterestGroupName        string `dynamo:"InterestGroupName,omitempty" json:"InterestGroupName"`
 	InterestGroupTeam        string `dynamo:"InterestGroupTeam,omitempty" json:"InterestGroupTeam"`
