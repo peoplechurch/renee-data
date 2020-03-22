@@ -233,3 +233,16 @@ type GroupAttendance struct {
 	FullName  string `dynamo:"FullName,omitempty" json:"FullName"`
 	UUID      string `dynamo:"UUID,omitempty" json:"UUID,omitempty"`
 }
+
+type NewCreationQR struct {
+	UUID      string `dynamo:"UUID,omitempty" json:"UUID,omitempty"`
+	Account   string `dynamo:"Account,omitempty" json:"account,omitempty"`
+	Campus    string `dynamo:"Campus,omitempty" json:"campus,omitempty"`
+	FirstName string `dynamo:"FirstName,omitempty" json:"firstName,omitempty"`
+	LastName  string `dynamo:"LastName,omitempty" json:"lastName,omitempty"`
+	FullName  string `dynamo:"FullName,omitempty" json:"fullName,omitempty"`
+	SentTo    string `dynamo:"SentTo,omitempty" json:"sentTo,omitempty"`
+	Status    string `dynamo:"Status,omitempty" json:"status,omitempty"`
+	SentAt    int64  `dynamo:"SentAt,omitempty" json:"sentAt,omitempty"`
+	ExpiredAt int64  `dynamo:"ExpiredAt,omitempty" json:"expiredAt,omitempty"`
+}
