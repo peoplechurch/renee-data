@@ -89,6 +89,7 @@ type Campus struct {
 	Name string `dynamo:"Name,omitempty" json:"Name"`
 
 	NewPersonChannel        string `dynamo:"NewPersonChannel,omitempty" json:"NewPersonChannel"`
+	NewPersonReneeChannel   string `dynamo:"NewPersonReneeChannel,omitempty" json:"NewPersonReneeChannel"`
 	NewPersonContactChannel string `dynamo:"NewPersonContactChannel,omitempty" json:"NewPersonContactChannel"`
 	NCTrigger               string `dynamo:"NCTrigger,omitempty" json:"NCTrigger"`
 	NCChannel               string `dynamo:"NCChannel,omitempty" json:"NCChannel"`
