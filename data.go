@@ -18,10 +18,10 @@ type Member struct {
 	FullName            string              `dynamo:"FullName,omitempty" json:"fullName,omitempty"`
 	Gender              string              `dynamo:"Gender,omitempty" json:"gender,omitempty"`
 	GrowGroup           Group               `dynamo:"GrowGroup,omitempty" json:"growGroup,omitempty"`
-	InterestGroup       Group               `dynamo:"InterestGroup,omitempty" json:"gnterestGroup,omitempty"`
+	InterestGroup       Group               `dynamo:"InterestGroup,omitempty" json:"interestGroup,omitempty"`
 	LastName            string              `dynamo:"LastName,omitempty" json:"lastName,omitempty"`
 	LastUpdated         int64               `dynamo:"LastUpdated,omitempty" json:"lastUpdated,omitempty"`
-	MembershipType      string              `dynamo:"MembershipType,omitempty" json:"lembershipType,omitempty"`
+	MembershipType      string              `dynamo:"MembershipType,omitempty" json:"membershipType,omitempty"`
 	NewCreation         NewCreation         `dynamo:"NewCreation,omitempty" json:"newCreation,omitempty"`
 	PhoneNumber         string              `dynamo:"PhoneNumber,omitempty" json:"phoneNumber,omitempty"`
 	ReceiveEmail        bool                `dynamo:"ReceiveEmail,omitempty" json:"receiveEmail,omitempty"`
@@ -52,7 +52,7 @@ type Campus struct {
 	CreatedAt            int64  `dynamo:"CreatedAt,omitempty" json:"createdAt,omitempty"`
 
 	DigitalChurchSlackResponse string `dynamo:"DigitalChurchSlackResponse,omitempty" json:"digitalChurchSlackResponse,omitempty"`
-	DigitalChurchCommand       string `dynamo:"DigitalChurchCommand,omitempty" json:"digitalChurchCommand"`
+	DigitalChurchCommand       string `dynamo:"DigitalChurchCommand,omitempty" json:"digitalChurchCommand,omitempty"`
 
 	EventCommand string `dynamo:"EventsCommand,omitempty" json:"eventsCommand,omitempty"`
 	EventsTeam   string `dynamo:"EventsTeam,omitempty" json:"eventsTeam,omitempty"`
@@ -201,8 +201,8 @@ type Groups struct {
 	Attendance      map[string][]GroupAttendance `dynamo:"Attendance,omitempty" json:"attendance,omitempty"`
 	Campus          string                       `dynamo:"Campus,omitempty" json:"campus,omitempty"`
 	CampusName      string                       `dynamo:"CampusName,omitempty" json:"campusName,omitempty"`
-	Capacity        GroupCapacity                `dynamo:"Capacity, omitempty" json:"capacity,omitempty"`
-	ConfirmResponse string                       `dynamo:"ConfirmResponse, omitempty" json:"confirmResponse,omitempty"`
+	Capacity        GroupCapacity                `dynamo:"Capacity,omitempty" json:"capacity,omitempty"`
+	ConfirmResponse string                       `dynamo:"ConfirmResponse,omitempty" json:"confirmResponse,omitempty"`
 	CreatedAt       int64                        `dynamo:"CreatedAt,omitempty" json:"createdAt,omitempty"`
 	Details         GroupDetails                 `dynamo:"Details,omitempty" json:"details,omitempty"`
 	GroupName       string                       `dynamo:"GroupName,omitempty" json:"groupName,omitempty"`
