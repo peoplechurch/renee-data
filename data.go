@@ -54,37 +54,37 @@ type Campus struct {
 	DigitalChurchSlackResponse string `dynamo:"DigitalChurchSlackResponse,omitempty" json:"digitalChurchSlackResponse,omitempty"`
 	DigitalChurchCommand       string `dynamo:"DigitalChurchCommand,omitempty" json:"digitalChurchCommand,omitempty"`
 
-	EventCommand string `dynamo:"EventsCommand,omitempty" json:"eventsCommand,omitempty"`
-	EventsTeam   string `dynamo:"EventsTeam,omitempty" json:"eventsTeam,omitempty"`
+	EventCommand              string `dynamo:"EventsCommand,omitempty" json:"eventsCommand,omitempty"`
+	EventsRegistrationChannel string `dynamo:"EventsRegistrationChannel,omitempty" json:"eventsRegistrationChannel,omitempty"`
 
 	GiveCommand       string `dynamo:"GiveCommand,omitempty" json:"giveCommand,omitempty"`
 	GiveTextResponse  string `dynamo:"GiveTextResponse,omitempty" json:"giveTextResponse,omitempty"`
 	GiveTrigger       string `dynamo:"GiveTrigger,omitempty" json:"giveTrigger,omitempty"`
 	GiveSlackResponse string `dynamo:"GiveSlackResponse,omitempty" json:"giveSlackResponse,omitempty"`
 
-	GrowthTrackCommand   string `dynamo:"GrowthTrackCommand,omitempty" json:"growthTrackCommand,omitempty"`
-	GrowthTrackName      string `dynamo:"GrowthTrackName,omitempty" json:"growthTrackName,omitempty"`
-	GrowthTrackTeam      string `dynamo:"GrowthTrackTeam,omitempty" json:"growthTrackTeam,omitempty"`
-	GrowthTrackW1Name    string `dynamo:"GrowthTrackW1Name,omitempty" json:"growthTrackW1Name,omitempty"`
-	GrowthTrackW2Name    string `dynamo:"GrowthTrackW2Name,omitempty" json:"growthTrackW2Name,omitempty"`
-	GrowthTrackW1Command string `dynamo:"GrowthTrackW1Command,omitempty" json:"growthTrackW1Command,omitempty"`
-	GrowthTrackW2Command string `dynamo:"GrowthTrackW2Command,omitempty" json:"growthTrackW2Command,omitempty"`
+	GrowthTrackCommand             string `dynamo:"GrowthTrackCommand,omitempty" json:"growthTrackCommand,omitempty"`
+	GrowthTrackName                string `dynamo:"GrowthTrackName,omitempty" json:"growthTrackName,omitempty"`
+	GrowthTrackRegistrationChannel string `dynamo:"GrowthTrackRegistrationChannel,omitempty" json:"growthTrackRegistrationChannel,omitempty"`
+	GrowthTrackW1Name              string `dynamo:"GrowthTrackW1Name,omitempty" json:"growthTrackW1Name,omitempty"`
+	GrowthTrackW2Name              string `dynamo:"GrowthTrackW2Name,omitempty" json:"growthTrackW2Name,omitempty"`
+	GrowthTrackW1Command           string `dynamo:"GrowthTrackW1Command,omitempty" json:"growthTrackW1Command,omitempty"`
+	GrowthTrackW2Command           string `dynamo:"GrowthTrackW2Command,omitempty" json:"growthTrackW2Command,omitempty"`
 	// Message to send when someone has already completed week 1 of Growth Track
 	GrowthTrackW1Redundant string `dynamo:"GrowthTrackW1Redundant,omitempty" json:"growthTrackW1Redundant,omitempty"`
 
-	GrowGroupCommand      string `dynamo:"GrowGroupCommand,omitempty" json:"growGroupCommand,omitempty"`
-	GrowGroupDescription  string `dynamo:"GrowGroupDescription,omitempty" json:"growGroupDescription,omitempty"`
-	GrowGroupName         string `dynamo:"GrowGroupName,omitempty" json:"growGroupName,omitempty"`
-	GrowGroupStudyKeyWord string `dynamo:"GrowGroupStudyKeyWord,omitempty" json:"growGroupStudyKeyWord,omitempty"`
-	GrowGroupTeam         string `dynamo:"GrowGroupTeam,omitempty" json:"growGroupTeam,omitempty"`
+	GrowGroupCommand             string `dynamo:"GrowGroupCommand,omitempty" json:"growGroupCommand,omitempty"`
+	GrowGroupDescription         string `dynamo:"GrowGroupDescription,omitempty" json:"growGroupDescription,omitempty"`
+	GrowGroupName                string `dynamo:"GrowGroupName,omitempty" json:"growGroupName,omitempty"`
+	GrowGroupRegistrationChannel string `dynamo:"GrowGroupRegistrationChannel,omitempty" json:"growGroupRegistrationChannel,omitempty"`
+	GrowGroupStudyKeyWord        string `dynamo:"GrowGroupStudyKeyWord,omitempty" json:"growGroupStudyKeyWord,omitempty"`
 
 	HealthTeam  string `dynamo:"HealthTeam,omitempty" json:"healthTeam,omitempty"`
 	HomeTrigger string `dynamo:"HomeTrigger,omitempty" json:"homeTrigger,omitempty"`
 
-	InterestGroupCommand     string `dynamo:"InterestGroupCommand,omitempty" json:"interestGroupCommand,omitempty"`
-	InterestGroupDescription string `dynamo:"InterestGroupDescription,omitempty" json:"interestGroupDescription,omitempty"`
-	InterestGroupName        string `dynamo:"InterestGroupName,omitempty" json:"interestGroupName,omitempty"`
-	InterestGroupTeam        string `dynamo:"InterestGroupTeam,omitempty" json:"interestGroupTeam,omitempty"`
+	InterestGroupCommand             string `dynamo:"InterestGroupCommand,omitempty" json:"interestGroupCommand,omitempty"`
+	InterestGroupDescription         string `dynamo:"InterestGroupDescription,omitempty" json:"interestGroupDescription,omitempty"`
+	InterestGroupName                string `dynamo:"InterestGroupName,omitempty" json:"interestGroupName,omitempty"`
+	InterestGroupRegistrationChannel string `dynamo:"InterestGroupRegistrationChannel,omitempty" json:"interestGroupRegistrationChannel,omitempty"`
 
 	Name string `dynamo:"Name,omitempty" json:"name,omitempty"`
 
@@ -106,11 +106,11 @@ type Campus struct {
 	OurCodeCommand       string `dynamo:"OurCodeCommand,omitempty" json:"ourCodeCommand,omitempty"`
 	OurCodeSlackResponse string `dynamo:"OurCodeSlackResponse,omitempty" json:"ourCodeSlackResponse,omitempty"`
 
-	ServeCommand                string `dynamo:"ServeCommand,omitempty" json:"serveCommand,omitempty"`
-	ServeTeam                   string `dynamo:"ServeTeam,omitempty" json:"serveTeam,omitempty"`
-	ServeTeamDescription        string `dynamo:"ServeTeamDescription,omitempty" json:"serveTeamDescription,omitempty"`
-	ServeDescriptionGrowthTrack string `dynamo:"ServeDescriptionGrowthTrack,omitempty" json:"serveDescriptionGrowthTrack,omitempty"`
-	ServeTeamName               string `dynamo:"ServeTeamName,omitempty" json:"serveTeamName,omitempty"`
+	ServeCommand                 string `dynamo:"ServeCommand,omitempty" json:"serveCommand,omitempty"`
+	ServeTeamDescription         string `dynamo:"ServeTeamDescription,omitempty" json:"serveTeamDescription,omitempty"`
+	ServeDescriptionGrowthTrack  string `dynamo:"ServeDescriptionGrowthTrack,omitempty" json:"serveDescriptionGrowthTrack,omitempty"`
+	ServeTeamName                string `dynamo:"ServeTeamName,omitempty" json:"serveTeamName,omitempty"`
+	ServeTeamRegistrationChannel string `dynamo:"ServeTeamRegistrationChannel,omitempty" json:"serveTeamRegistrationChannel,omitempty"`
 
 	SlackAppID             string `dynamo:"SlackAppID,omitempty" json:"slackAppID,omitempty"`
 	SlackBotToken          string `dynamo:"SlackBotToken,omitempty" json:"slackBotToken,omitempty"`
