@@ -92,16 +92,17 @@ type Campus struct {
 	NewCreationsDinnerName string `dynamo:"NewCreationsDinnerName,omitempty" json:"newCreationsDinnerName,omitempty"`
 	NewCreationsTeam       string `dynamo:"NewCreationsTeam,omitempty" json:"newCreationsTeam,omitempty"`
 
-	NotificationChannelBibleClaim       string `dynamo:"NotificationChannelBibleClaim,omitempty" json:"notificationChannelBibleClaim,omitempty"`
-	NotificationChannelEvents           string `dynamo:"NotificationChannelEvents,omitempty" json:"notificationChannelEvents,omitempty"`
-	NotificationChannelGrowGroups       string `dynamo:"NotificationChannelGrowGroups,omitempty" json:"notificationChannelGrowGroups,omitempty"`
-	NotificationChannelGrowthTrack      string `dynamo:"NotificationChannelGrowthTrack,omitempty" json:"notificationChannelGrowthTrack,omitempty"`
-	NotificationChannelInterestGroups   string `dynamo:"NotificationChannelInterestGroups,omitempty" json:"notificationChannelInterestGroups,omitempty"`
-	NotificationChannelNewCreation      string `dynamo:"NotificationChannelNewCreation,omitempty" json:"notificationChannelNewCreation,omitempty"`
-	NotificationChannelNewPerson        string `dynamo:"NotificationChannelNewPerson,omitempty" json:"notificationChannelNewPerson,omitempty"`
-	NotificationChannelNewPersonRenee   string `dynamo:"NotificationChannelNewPersonRenee,omitempty" json:"notificationChannelNewPersonRenee,omitempty"`
-	NotificationChannelNewPersonContact string `dynamo:"NotificationChannelNewPersonContact,omitempty" json:"notificationChannelNewPersonContact,omitempty"`
-	NotificationChannelServeTeams       string `dynamo:"NotificationChannelServeTeams,omitempty" json:"notificationChannelServeTeams,omitempty"`
+	NotificationChannelBibleClaim            string `dynamo:"NotificationChannelBibleClaim,omitempty" json:"notificationChannelBibleClaim,omitempty"`
+	NotificationChannelEvents                string `dynamo:"NotificationChannelEvents,omitempty" json:"notificationChannelEvents,omitempty"`
+	NotificationChannelGrowGroups            string `dynamo:"NotificationChannelGrowGroups,omitempty" json:"notificationChannelGrowGroups,omitempty"`
+	NotificationChannelGrowthTrack           string `dynamo:"NotificationChannelGrowthTrack,omitempty" json:"notificationChannelGrowthTrack,omitempty"`
+	NotificationChannelGrowthTrackCompletion string `dynamo:"NotificationChannelGrowthTrackCompletion,omitempty" json:"notificationChannelGrowthTrackCompletion,omitempty"`
+	NotificationChannelInterestGroups        string `dynamo:"NotificationChannelInterestGroups,omitempty" json:"notificationChannelInterestGroups,omitempty"`
+	NotificationChannelNewCreation           string `dynamo:"NotificationChannelNewCreation,omitempty" json:"notificationChannelNewCreation,omitempty"`
+	NotificationChannelNewPerson             string `dynamo:"NotificationChannelNewPerson,omitempty" json:"notificationChannelNewPerson,omitempty"`
+	NotificationChannelNewPersonRenee        string `dynamo:"NotificationChannelNewPersonRenee,omitempty" json:"notificationChannelNewPersonRenee,omitempty"`
+	NotificationChannelNewPersonContact      string `dynamo:"NotificationChannelNewPersonContact,omitempty" json:"notificationChannelNewPersonContact,omitempty"`
+	NotificationChannelServeTeams            string `dynamo:"NotificationChannelServeTeams,omitempty" json:"notificationChannelServeTeams,omitempty"`
 
 	MarketingPlatforms   []string `dynamo:"MarketingPlatforms,omitempty" json:"marketingPlatforms,omitempty"`
 	OnboardChatWithTeam  string   `dynamo:"OnboardChatWithTeam,omitempty" json:"onboardChatWithTeam,omitempty"`
