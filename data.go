@@ -86,6 +86,8 @@ type Campus struct {
 	InterestGroupName        string `dynamo:"InterestGroupName,omitempty" json:"InterestGroupName"`
 	InterestGroupTeam        string `dynamo:"InterestGroupTeam,omitempty" json:"InterestGroupTeam"`
 
+	LastUpdated int64 `dynamo:"LastUpdated,omitempty" json:"lastUpdated"`
+	
 	Name string `dynamo:"Name,omitempty" json:"Name"`
 
 	NewPersonChannel        string `dynamo:"NewPersonChannel,omitempty" json:"NewPersonChannel"`
