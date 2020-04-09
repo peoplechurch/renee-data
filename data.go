@@ -77,7 +77,7 @@ type Campus struct {
 	InterestGroupDescription                 string   `dynamo:"InterestGroupDescription,omitempty" json:"interestGroupDescription,omitempty"`
 	InterestGroupName                        string   `dynamo:"InterestGroupName,omitempty" json:"interestGroupName,omitempty"`
 	InterestGroupTeam                        string   `dynamo:"InterestGroupTeam,omitempty" json:"interestGroupTeam,omitempty"`
-	LastUpdated                              string   `dynamo:"LastUpdated,omitempty" json:"lastUpdated"`
+	LastUpdated                              int64    `dynamo:"LastUpdated,omitempty" json:"lastUpdated"`
 	Name                                     string   `dynamo:"Name,omitempty" json:"name,omitempty"`
 	NCTrigger                                string   `dynamo:"NCTrigger,omitempty" json:"NCTrigger,omitempty"`
 	NewCreationName                          string   `dynamo:"newCreationName,omitempty" json:"newCreationName,omitempty"`
