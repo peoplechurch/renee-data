@@ -215,12 +215,22 @@ type Groups struct {
 
 // GroupDetails of a Groups
 type GroupDetails struct {
-	ChannelID   string `dynamo:"ChannelID,omitempty" json:"channelID,omitempty"`
-	Description string `dynamo:"Description,omitempty" json:"description,omitempty"`
-	EndTime     int64  `dynamo:"EndTime,omitempty" json:"endTime,omitempty"`
-	Location    string `dynamo:"Location,omitempty" json:"location,omitempty"`
-	StartTime   int64  `dynamo:"StartTime,omitempty" json:"startTime,omitempty"`
-	Tier        int    `dynamo:"Tier,omitempty" json:"tier,omitempty"`
+	ChannelID   string   `dynamo:"ChannelID,omitempty" json:"channelID,omitempty"`
+	Description string   `dynamo:"Description,omitempty" json:"description,omitempty"`
+	EndTime     int64    `dynamo:"EndTime,omitempty" json:"endTime,omitempty"`
+	Location    Location `dynamo:"Location,omitempty" json:"location,omitempty"`
+	StartTime   int64    `dynamo:"StartTime,omitempty" json:"startTime,omitempty"`
+	Tier        int      `dynamo:"Tier,omitempty" json:"tier,omitempty"`
+}
+
+// Location of a Groups
+type Location struct {
+	StreetAddress   string `dynamo:"StreetAddress,omitempty" json:"streetAddress,omitempty"`      // 511 S. Cuyler Ave
+	ExtendedAddress string `dynamo:"ExtendedAddress,omitempty" json:"extrendedAddress,omitempty"` // Apt. 2N
+	Locality        string `dynamo:"Locality,omitempty" json:"locality,omitempty"`                // Oak Park
+	PostalCode      string `dynamo:"PostalCode,omitempty" json:"postalCode,omitempty"`            // 60304
+	Region          string `dynamo:"Region,omitempty" json:"region,omitempty"`                    // IL
+	Country         string `dynamo:"Country,omitempty" json:"country,omitempty"`                  // USA
 }
 
 // GroupCapacity of a Groups
