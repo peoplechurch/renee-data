@@ -80,7 +80,7 @@ type Campus struct {
 	LastUpdated                              int64    `dynamo:"LastUpdated,omitempty" json:"lastUpdated"`
 	Name                                     string   `dynamo:"Name,omitempty" json:"name,omitempty"`
 	NCTrigger                                string   `dynamo:"NCTrigger,omitempty" json:"NCTrigger,omitempty"`
-	NewCreationName                          string   `dynamo:"newCreationName,omitempty" json:"newCreationName,omitempty"`
+	NewCreationName                          string   `dynamo:"NewCreationName,omitempty" json:"newCreationName,omitempty"`
 	NewCreationsDinnerName                   string   `dynamo:"NewCreationsDinnerName,omitempty" json:"newCreationsDinnerName,omitempty"`
 	NewCreationsTeam                         string   `dynamo:"NewCreationsTeam,omitempty" json:"newCreationsTeam,omitempty"`
 	NotificationChannelBibleClaim            string   `dynamo:"NotificationChannelBibleClaim,omitempty" json:"notificationChannelBibleClaim,omitempty"`
