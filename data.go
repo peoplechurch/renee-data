@@ -215,13 +215,13 @@ type Groups struct {
 
 // GroupDetails of a Groups
 type GroupDetails struct {
-	ChannelID   string   `dynamo:"ChannelID,omitempty" json:"channelID,omitempty"`
-	Description string   `dynamo:"Description,omitempty" json:"description,omitempty"`
-	EndTime     int64    `dynamo:"EndTime,omitempty" json:"endTime,omitempty"`
-	Location    string   `dynamo:"Location,omitempty" json:"location,omitempty"`
-	Location2   Location `dynamo:"Location2,omitempty" json:"location2,omitempty"`
-	StartTime   int64    `dynamo:"StartTime,omitempty" json:"startTime,omitempty"`
-	Tier        int      `dynamo:"Tier,omitempty" json:"tier,omitempty"`
+	ChannelID       string   `dynamo:"ChannelID,omitempty" json:"channelID,omitempty"`
+	Description     string   `dynamo:"Description,omitempty" json:"description,omitempty"`
+	EndTime         int64    `dynamo:"EndTime,omitempty" json:"endTime,omitempty"`
+	Location        Location `dynamo:"Location,omitempty" json:"location,omitempty"`
+	StartTime       int64    `dynamo:"StartTime,omitempty" json:"startTime,omitempty"`
+	Tier            int      `dynamo:"Tier,omitempty" json:"tier,omitempty"`
+	NewCreationName string   `dynamo:"newCreationName,omitempty" json:"newCreationName,omitempty"`
 }
 
 // Location of a group
