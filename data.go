@@ -58,7 +58,6 @@ type Campus struct {
 	GiveTrigger                string `dynamo:"GiveTrigger,omitempty" json:"giveTrigger,omitempty"`
 	GiveSlackResponse          string `dynamo:"GiveSlackResponse,omitempty" json:"giveSlackResponse,omitempty"`
 	GrowthTrackCommand         string `dynamo:"GrowthTrackCommand,omitempty" json:"growthTrackCommand,omitempty"`
-	GrowthTrackDescription     string `dynamo:"GrowthTrackDescription,omitempty" json:"growthTrackDescription,omitempty"`
 	GrowthTrackName            string `dynamo:"GrowthTrackName,omitempty" json:"growthTrackName,omitempty"`
 	GrowthTrackTeam            string `dynamo:"GrowthTrackTeam,omitempty" json:"growthTrackTeam,omitempty"`
 	GrowthTrackW1Name          string `dynamo:"GrowthTrackW1Name,omitempty" json:"growthTrackW1Name,omitempty"`
