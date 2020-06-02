@@ -200,7 +200,7 @@ type Groups struct {
 	CreatedAt         int64                        `dynamo:"CreatedAt,omitempty" json:"createdAt,omitempty"`
 	Details           GroupDetails                 `dynamo:"Details,omitempty" json:"details,omitempty"`
 	GroupName         string                       `dynamo:"GroupName,omitempty" json:"groupName,omitempty"`
-	BypassGrwothTrack bool                         `dynamo:"BypassGrwothTrack,omitempty" json:"bypassGrowthTrack,omitempty"`
+	BypassGrowthTrack bool                         `dynamo:"BypassGrowthTrack,omitempty" json:"bypassGrowthTrack,omitempty"`
 	LastUpdated       int64                        `dynamo:"LastUpdated,omitempty" json:"lastUpdated,omitempty"`
 	Leaders           []Member                     `dynamo:"Leaders,omitempty" json:"leaders,omitempty"`
 	UUID              string                       `dynamo:"UUID,hash,omitempty" json:"UUID,omitempty"`
