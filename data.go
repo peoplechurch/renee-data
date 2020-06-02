@@ -188,29 +188,30 @@ type DrawData struct {
 
 // Groups data structure
 type Groups struct {
-	Account         string                       `dynamo:"Account,omitempty" json:"account,omitempty"`
-	AccountName     string                       `dynamo:"AccountName,omitempty" json:"accountName,omitempty"`
-	Active          bool                         `dynamo:"Active,omitempty" json:"active,omitempty"`
-	AgeGroup        string                       `dynamo:"AgeGroup,omitempty" json:"ageGroup,omitempty"`
-	Attendance      map[string][]GroupAttendance `dynamo:"Attendance,omitempty" json:"attendance,omitempty"`
-	Campus          string                       `dynamo:"Campus,omitempty" json:"campus,omitempty"`
-	CampusName      string                       `dynamo:"CampusName,omitempty" json:"campusName,omitempty"`
-	Capacity        GroupCapacity                `dynamo:"Capacity,omitempty" json:"capacity,omitempty"`
-	ConfirmResponse string                       `dynamo:"ConfirmResponse,omitempty" json:"confirmResponse,omitempty"`
-	CreatedAt       int64                        `dynamo:"CreatedAt,omitempty" json:"createdAt,omitempty"`
-	Details         GroupDetails                 `dynamo:"Details,omitempty" json:"details,omitempty"`
-	GroupName       string                       `dynamo:"GroupName,omitempty" json:"groupName,omitempty"`
-	LastUpdated     int64                        `dynamo:"LastUpdated,omitempty" json:"lastUpdated,omitempty"`
-	Leaders         []Member                     `dynamo:"Leaders,omitempty" json:"leaders,omitempty"`
-	UUID            string                       `dynamo:"UUID,hash,omitempty" json:"UUID,omitempty"`
-	Oversights      []Member                     `dynamo:"Oversights,omitempty" json:"oversights,omitempty"`
-	Perpetual       bool                         `dynamo:"Perpetual,omitempty" json:"perpetual,omitempty"`
-	Private         bool                         `dynamo:"Private,omitempty" json:"private,omitempty"`
-	Registrations   []Member                     `dynamo:"Registrations,omitempty" json:"registrations,omitempty"`
-	RegistrationURL string                       `dynamo:"RegistrationURL,omitempty" json:"registrationURL,omitempty"`
-	RequestFormLink string                       `dynamo:"RequestFormLink,omitempty" json:"requestFormLink,omitempty"`
-	StudyKey        string                       `dynamo:"StudyKey,omitempty" json:"studyKey,omitempty"`
-	Type            string                       `dynamo:"Type,omitempty" json:"type,omitempty"`
+	Account           string                       `dynamo:"Account,omitempty" json:"account,omitempty"`
+	AccountName       string                       `dynamo:"AccountName,omitempty" json:"accountName,omitempty"`
+	Active            bool                         `dynamo:"Active,omitempty" json:"active,omitempty"`
+	AgeGroup          string                       `dynamo:"AgeGroup,omitempty" json:"ageGroup,omitempty"`
+	Attendance        map[string][]GroupAttendance `dynamo:"Attendance,omitempty" json:"attendance,omitempty"`
+	Campus            string                       `dynamo:"Campus,omitempty" json:"campus,omitempty"`
+	CampusName        string                       `dynamo:"CampusName,omitempty" json:"campusName,omitempty"`
+	Capacity          GroupCapacity                `dynamo:"Capacity,omitempty" json:"capacity,omitempty"`
+	ConfirmResponse   string                       `dynamo:"ConfirmResponse,omitempty" json:"confirmResponse,omitempty"`
+	CreatedAt         int64                        `dynamo:"CreatedAt,omitempty" json:"createdAt,omitempty"`
+	Details           GroupDetails                 `dynamo:"Details,omitempty" json:"details,omitempty"`
+	GroupName         string                       `dynamo:"GroupName,omitempty" json:"groupName,omitempty"`
+	BypassGrwothTrack bool                         `dynamo:"BypassGrwothTrack,omitempty" json:"bypassGrowthTrack,omitempty"`
+	LastUpdated       int64                        `dynamo:"LastUpdated,omitempty" json:"lastUpdated,omitempty"`
+	Leaders           []Member                     `dynamo:"Leaders,omitempty" json:"leaders,omitempty"`
+	UUID              string                       `dynamo:"UUID,hash,omitempty" json:"UUID,omitempty"`
+	Oversights        []Member                     `dynamo:"Oversights,omitempty" json:"oversights,omitempty"`
+	Perpetual         bool                         `dynamo:"Perpetual,omitempty" json:"perpetual,omitempty"`
+	Private           bool                         `dynamo:"Private,omitempty" json:"private,omitempty"`
+	Registrations     []Member                     `dynamo:"Registrations,omitempty" json:"registrations,omitempty"`
+	RegistrationURL   string                       `dynamo:"RegistrationURL,omitempty" json:"registrationURL,omitempty"`
+	RequestFormLink   string                       `dynamo:"RequestFormLink,omitempty" json:"requestFormLink,omitempty"`
+	StudyKey          string                       `dynamo:"StudyKey,omitempty" json:"studyKey,omitempty"`
+	Type              string                       `dynamo:"Type,omitempty" json:"type,omitempty"`
 }
 
 // GroupDetails of a Groups
