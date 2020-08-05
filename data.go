@@ -150,10 +150,19 @@ type MemberGroupData struct {
 
 // NewCreation data of a Campus Member
 type NewCreation struct {
-	FollowUp      bool           `dynamo:"FollowUp,omitempty" json:"followUp,omitempty"`
-	FirstDecision NCFirstTime    `dynamo:"FirstDecision,omitempty" json:"firstDecision,omitempty"`
-	Rededication  NCRededication `dynamo:"Rededication,omitempty" json:"rededication,omitempty"`
-	Status        bool           `dynamo:"Status,omitempty" json:"status,omitempty"`
+	FollowUp       bool           `dynamo:"FollowUp,omitempty" json:"followUp,omitempty"`
+	FirstDecision  NCFirstTime    `dynamo:"FirstDecision,omitempty" json:"firstDecision,omitempty"`
+	Rededication   NCRededication `dynamo:"Rededication,omitempty" json:"rededication,omitempty"`
+	Status         bool           `dynamo:"Status,omitempty" json:"status,omitempty"`
+	IncentiveClaim IncentiveClaim `dynamo:"IncentiveClaim,omitempty" json:"incentiveClaim,omitempty"`
+}
+
+// IncentiveClaim is the data structure for the data involving the qr code for an incentive of a new creation
+type IncentiveClaim struct {
+	Active    bool   `dynamo:"Active,omitempty" json:"active,omitempty"`
+	SentAt    int64  `dynamo:"SentAt,omitempty" json:"sentAt,omitempty"`
+	ExpiredAt int64  `dynamo:"ExpiredAt,omitempty" json:"expiredAt,omitempty"`
+	QRCodeURL string `dynamo:"QRCodeURL,omitempty" json:"qrCodeURL,omitempty"`
 }
 
 // NCFirstTime data of a NewCreation
