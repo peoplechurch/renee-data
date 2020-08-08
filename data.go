@@ -28,6 +28,7 @@ type Member struct {
 	ShirtSize           string              `dynamo:"ShirtSize,omitempty" json:"shirtSize,omitempty"`
 	SlackID             string              `dynamo:"SlackID,omitempty" json:"slackID,omitempty"`
 	SlackChannelID      string              `dynamo:"SlackChannelID,omitempty" json:"slackChannelID,omitempty"`
+	SlackOnboard        int64               `dynamo:"SlackOnboard,omitempty" json:"slackOnboard,omitempty"`
 	SpiritualGifts      SpiritualGiftsData  `dynamo:"SpiritualGifts,omitempty" json:"spiritualGifts,omitempty"`
 	ThisIsHome          ThisIsHome          `dynamo:"ThisIsHome,omitempty" json:"thisIsHome,omitempty"`
 	UUID                string              `dynamo:"UUID,hash,omitempty" json:"UUID,omitempty"`
