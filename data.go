@@ -71,6 +71,7 @@ type Campus struct {
 	GrowGroupDescription                     string   `dynamo:"GrowGroupDescription,omitempty" json:"growGroupDescription,omitempty"`
 	GrowGroupName                            string   `dynamo:"GrowGroupName,omitempty" json:"growGroupName,omitempty"`
 	GrowGroupStudyKeyWord                    string   `dynamo:"GrowGroupStudyKeyWord,omitempty" json:"growGroupStudyKeyWord,omitempty"`
+	GrowGroupTiers                           []int    `dynamo:"GrowGroupTiers,omitempty" json:"growGroupTiers,omitempty"`
 	GrowGroupTeam                            string   `dynamo:"GrowGroupTeam,omitempty" json:"growGroupTeam,omitempty"`
 	HealthTeam                               string   `dynamo:"HealthTeam,omitempty" json:"healthTeam,omitempty"`
 	HomeTrigger                              string   `dynamo:"HomeTrigger,omitempty" json:"homeTrigger,omitempty"`
