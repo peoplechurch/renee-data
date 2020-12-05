@@ -97,6 +97,8 @@ type Campus struct {
 	NotificationChannelNewPersonRenee        string   `dynamo:"NotificationChannelNewPersonRenee,omitempty" json:"notificationChannelNewPersonRenee,omitempty"`
 	NotificationChannelNewPersonContact      string   `dynamo:"NotificationChannelNewPersonContact,omitempty" json:"notificationChannelNewPersonContact,omitempty"`
 	NotificationChannelServeTeams            string   `dynamo:"NotificationChannelServeTeams,omitempty" json:"notificationChannelServeTeams,omitempty"`
+	MailchimpAudienceID                      string   `dynamo:"MailchimpAudienceID,omitempty" json:"mailchimpAudienceID,omitempty"`
+	MailchimpAPIKey                          string   `dynamo:"MailchimpAPIKey,omitempty" json:"mailchimpAPIKey,omitempty"`
 	MarketingPlatforms                       []string `dynamo:"MarketingPlatforms,omitempty" json:"marketingPlatforms,omitempty"`
 	OnboardChatWithTeam                      string   `dynamo:"OnboardChatWithTeam,omitempty" json:"onboardChatWithTeam,omitempty"`
 	OnboardGrowGroups                        string   `dynamo:"OnboardGrowGroups,omitempty" json:"onboardGrowGroups,omitempty"`
