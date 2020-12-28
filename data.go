@@ -19,6 +19,7 @@ type Member struct {
 	Gender              string              `dynamo:"Gender,omitempty" json:"gender,omitempty"`
 	GrowGroup           Group               `dynamo:"GrowGroup,omitempty" json:"growGroup,omitempty"`
 	InterestGroup       Group               `dynamo:"InterestGroup,omitempty" json:"interestGroup,omitempty"`
+	GrowthTrack         Group               `dynamo:"GrowthTrack,omitempty" json:"growthTrack,omitempty"`
 	LastName            string              `dynamo:"LastName,omitempty" json:"lastName,omitempty"`
 	LastUpdated         int64               `dynamo:"LastUpdated,omitempty" json:"lastUpdated,omitempty"`
 	MembershipType      string              `dynamo:"MembershipType,omitempty" json:"membershipType,omitempty"`
@@ -45,28 +46,27 @@ type Account struct {
 
 // Campus : Account Campus data structure
 type Campus struct {
-	Account                    string `dynamo:"Account,omitempty" json:"account,omitempty"`
-	AccountName                string `dynamo:"AccountName,omitempty" json:"accountName,omitempty"`
-	ClerkNumber                string `dynamo:"ClerkNumber,omitempty" json:"clerkNumber,omitempty"`
-	CurrentGrowGroupTier       []int  `dynamo:"CurrentGrowGroupTier,omitempty" json:"currentGrowGroupTier,omitempty"`
-	CreatedAt                  int64  `dynamo:"CreatedAt,omitempty" json:"createdAt,omitempty"`
-	DigitalChurchSlackResponse string `dynamo:"DigitalChurchSlackResponse,omitempty" json:"digitalChurchSlackResponse,omitempty"`
-	DigitalChurchCommand       string `dynamo:"DigitalChurchCommand,omitempty" json:"digitalChurchCommand,omitempty"`
-	EventCommand               string `dynamo:"EventsCommand,omitempty" json:"eventsCommand,omitempty"`
-	EventsTeam                 string `dynamo:"EventsTeam,omitempty" json:"eventsTeam,omitempty"`
-	GiveCommand                string `dynamo:"GiveCommand,omitempty" json:"giveCommand,omitempty"`
-	GiveTextResponse           string `dynamo:"GiveTextResponse,omitempty" json:"giveTextResponse,omitempty"`
-	GiveTrigger                string `dynamo:"GiveTrigger,omitempty" json:"giveTrigger,omitempty"`
-	GiveSlackResponse          string `dynamo:"GiveSlackResponse,omitempty" json:"giveSlackResponse,omitempty"`
-	GrowthTrackCommand         string `dynamo:"GrowthTrackCommand,omitempty" json:"growthTrackCommand,omitempty"`
-	GrowthTrackName            string `dynamo:"GrowthTrackName,omitempty" json:"growthTrackName,omitempty"`
-	GrowthTrackTeam            string `dynamo:"GrowthTrackTeam,omitempty" json:"growthTrackTeam,omitempty"`
-	GrowthTrackW1Name          string `dynamo:"GrowthTrackW1Name,omitempty" json:"growthTrackW1Name,omitempty"`
-	GrowthTrackW2Name          string `dynamo:"GrowthTrackW2Name,omitempty" json:"growthTrackW2Name,omitempty"`
-	GrowthTrackW1Command       string `dynamo:"GrowthTrackW1Command,omitempty" json:"growthTrackW1Command,omitempty"`
-	GrowthTrackW2Command       string `dynamo:"GrowthTrackW2Command,omitempty" json:"growthTrackW2Command,omitempty"`
-	// Message to send when someone has already completed week 1 of Growth Track
-	GrowthTrackW1Redundant                   string   `dynamo:"GrowthTrackW1Redundant,omitempty" json:"growthTrackW1Redundant,omitempty"`
+	Account                                  string   `dynamo:"Account,omitempty" json:"account,omitempty"`
+	AccountName                              string   `dynamo:"AccountName,omitempty" json:"accountName,omitempty"`
+	ClerkNumber                              string   `dynamo:"ClerkNumber,omitempty" json:"clerkNumber,omitempty"`
+	CurrentGrowGroupTier                     []int    `dynamo:"CurrentGrowGroupTier,omitempty" json:"currentGrowGroupTier,omitempty"`
+	CreatedAt                                int64    `dynamo:"CreatedAt,omitempty" json:"createdAt,omitempty"`
+	DigitalChurchSlackResponse               string   `dynamo:"DigitalChurchSlackResponse,omitempty" json:"digitalChurchSlackResponse,omitempty"`
+	DigitalChurchCommand                     string   `dynamo:"DigitalChurchCommand,omitempty" json:"digitalChurchCommand,omitempty"`
+	EventCommand                             string   `dynamo:"EventsCommand,omitempty" json:"eventsCommand,omitempty"`
+	EventsTeam                               string   `dynamo:"EventsTeam,omitempty" json:"eventsTeam,omitempty"`
+	GiveCommand                              string   `dynamo:"GiveCommand,omitempty" json:"giveCommand,omitempty"`
+	GiveTextResponse                         string   `dynamo:"GiveTextResponse,omitempty" json:"giveTextResponse,omitempty"`
+	GiveTrigger                              string   `dynamo:"GiveTrigger,omitempty" json:"giveTrigger,omitempty"`
+	GiveSlackResponse                        string   `dynamo:"GiveSlackResponse,omitempty" json:"giveSlackResponse,omitempty"`
+	GrowthTrackCommand                       string   `dynamo:"GrowthTrackCommand,omitempty" json:"growthTrackCommand,omitempty"`
+	GrowthTrackName                          string   `dynamo:"GrowthTrackName,omitempty" json:"growthTrackName,omitempty"`
+	GrowthTrackTeam                          string   `dynamo:"GrowthTrackTeam,omitempty" json:"growthTrackTeam,omitempty"`
+	GrowthTrackW1Name                        string   `dynamo:"GrowthTrackW1Name,omitempty" json:"growthTrackW1Name,omitempty"`
+	GrowthTrackW2Name                        string   `dynamo:"GrowthTrackW2Name,omitempty" json:"growthTrackW2Name,omitempty"`
+	GrowthTrackW1Command                     string   `dynamo:"GrowthTrackW1Command,omitempty" json:"growthTrackW1Command,omitempty"`
+	GrowthTrackW2Command                     string   `dynamo:"GrowthTrackW2Command,omitempty" json:"growthTrackW2Command,omitempty"`
+	GrowthTrackW1Redundant                   string   `dynamo:"GrowthTrackW1Redundant,omitempty" json:"growthTrackW1Redundant,omitempty"` // Message to send when someone has already completed week 1 of Growth Track
 	GrowGroupCommand                         string   `dynamo:"GrowGroupCommand,omitempty" json:"growGroupCommand,omitempty"`
 	GrowGroupDescription                     string   `dynamo:"GrowGroupDescription,omitempty" json:"growGroupDescription,omitempty"`
 	GrowGroupName                            string   `dynamo:"GrowGroupName,omitempty" json:"growGroupName,omitempty"`
