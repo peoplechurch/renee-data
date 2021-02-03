@@ -79,6 +79,7 @@ type Campus struct {
 	NCTrigger                                string   `dynamo:"NCTrigger,omitempty" json:"NCTrigger,omitempty"`
 	NewCreationName                          string   `dynamo:"NewCreationName,omitempty" json:"newCreationName,omitempty"`
 	NewCreationsDinnerName                   string   `dynamo:"NewCreationsDinnerName,omitempty" json:"newCreationsDinnerName,omitempty"`
+	NotificationChannelAccountAlerts         string   `dynamo:"NotificationChannelAccountAlerts,omitempty" json:"notificationChannelAccountAlerts,omitempty"`
 	NotificationChannelBibleClaim            string   `dynamo:"NotificationChannelBibleClaim,omitempty" json:"notificationChannelBibleClaim,omitempty"`
 	NotificationChannelEvents                string   `dynamo:"NotificationChannelEvents,omitempty" json:"notificationChannelEvents,omitempty"`
 	NotificationChannelGrowGroups            string   `dynamo:"NotificationChannelGrowGroups,omitempty" json:"notificationChannelGrowGroups,omitempty"`
