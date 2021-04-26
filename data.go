@@ -225,7 +225,7 @@ type Groups struct {
 	Registrations     []Member                     `dynamo:"Registrations,omitempty" json:"registrations,omitempty"`
 	RegistrationURL   string                       `dynamo:"RegistrationURL,omitempty" json:"registrationURL,omitempty"`
 	RequestFormLink   string                       `dynamo:"RequestFormLink,omitempty" json:"requestFormLink,omitempty"`
-	StudyKey          string                       `dynamo:"StudyKey,omitempty" json:"studyKey,omitempty"`
+	AccessKey         string                       `dynamo:"AccessKey,omitempty" json:"accessKey,omitempty"`
 	Type              string                       `dynamo:"Type,omitempty" json:"type,omitempty"`
 }
 
