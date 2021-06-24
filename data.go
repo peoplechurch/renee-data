@@ -124,7 +124,7 @@ type Campus struct {
 	SlackSigningSecret                       string   `dynamo:"SlackSigningSecret,omitempty" json:"slackSigningSecret,omitempty"`
 	SlackTeamID                              string   `dynamo:"SlackTeamID,omitempty" json:"slackTeamID,omitempty"`
 	SlackURL                                 string   `dynamo:"SlackURL,omitempty" json:"slackURL,omitempty"`
-	SlackVerificationToken                   string   `dynamo:"SlackVerificationToken,omitempty" json:"slackVerificationToken,omitempty"`
+	SlackVerificationToken                   string    `dynamo:"SlackVerificationToken,omitempty" json:"slackVerificationToken,omitempty"`
 	SlashRenee                               string   `dynamo:"SlashRenee,omitempty" json:"slashRenee,omitempty"`
 	TimeZone                                 string   `dynamo:"TimeZone,omitempty" json:"timeZone,omitempty"`
 	UUID                                     string   `dynamo:"UUID,hash,omitempty" json:"UUID"`
@@ -230,7 +230,7 @@ type Groups struct {
 	AccessKey         string                       `dynamo:"AccessKey,omitempty" json:"accessKey,omitempty"`
 	Type              string                       `dynamo:"Type,omitempty" json:"type,omitempty"`
 	HasRoster		  bool                         `dynamo:"HasRoster,omitempty" json:"hasRoster,omitempty"` // a flag whether this group has a bound roster
-	Roster            string 					   `dynamo:"Roster,omitempty" json:"roster,omitempty"` // the uuid of the roster in the roster db
+	RosterID            string 					   `dynamo:"RosterID,omitempty" json:"rosterID,omitempty"` // the uuid of the roster in the roster db
 }
 
 // GroupDetails of a Groups
@@ -293,19 +293,18 @@ type GroupRoster struct {
 	LastUpdatedBy		string				`dynamo:"LastUpdatedBy,omitempty" json:"lastUpdatedBy,omitempty"`	// auth user who last updated the roster
 	GroupID   			string 	  			`dynamo:"GroupID,omitempty" json:"groupID,omitempty"` // the id of the group the roster is bound to
 	GroupType			string 				`dynamo:"GroupType,omitempty" json:"groupType,omitempty"` // the type of group the roster is for (ex: grow group, event, baptism, growth track, etc)
-	TeamsRequired 	    []string  			`dynamo:"ServeTeams,omitempty" json:"serveTeams,omitempty"` // a list of serve team ids required for the roster
 	Teams 				[]RosterTeam    	`dynamo:"Teams,omitempty" json:"teams,omitempty"` // a list of serve team ids required for the roster
 }
 
 type RosterTeam struct {
-	TeamID 					string  	`dynamo:"TeamID,omitempty" json:"teamID,omitempty"` // the id of the serve team
-	RequiredCompleteTime	time.Time	`dynamo:"RequiredCompleteTime" json:"requiredCompleteTime"` // the time that the roster must be completed by
-	IsComplete 				bool    	`dynamo:"IsComplete" json:"isComplete"` // a flag for whether or not the roster for this team has been complete or if there are still slots to fill
-	CompletedOn				time.Time	`dynamo:"CompletedOn" json:"completedOn"` // time for when roster was completed
-	Rosters 				[]Roster 	`dynamo:"Rosters" json:"rosters"` // a flag for whether or not the roster for this team has been complete or if there are still slots to fill
+	TeamID 						string  		`dynamo:"TeamID,omitempty" json:"teamID,omitempty"` // the id of the serve team
+	RequiredFillTime			time.Time		`dynamo:"RequiredFillTime" json:"requiredFillTime"` // the time that the roster must be completed by
+	IsFilled 					bool    		`dynamo:"IsFilled" json:"isFilled"` // a flag for whether or not the roster for this team has been complete or if there are still slots to fill
+	FilledOn					time.Time		`dynamo:"FilledOn" json:"filledOn"` // time for when roster was completed
+	RosterMembers 				[]RosterMember 	`dynamo:"RosterMembers" json:"rosterMembers"` // a list of people assigned to this roster team
 }
 
-type Roster struct {
+type RosterMember struct {
 	UUID 			string		`dynamo:"UUID" json:"uuid"` // uuid of the user being rostered
 	RosterAccepted  bool		`dynamo:"RosterAccepted,omitempty" json:"rosterAccepted"` // a flag whether or not a user accepted the roster
 	AcceptedOn		time.Time  	`dynamo:"AcceptedOn,omitempty" json:"acceptedOn"` // time of acceptance
