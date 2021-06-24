@@ -1,5 +1,7 @@
 package shared
 
+import "time"
+
 // Member : Campus Member data structure
 type Member struct {
 	Account             string              `dynamo:"Account,omitempty" json:"account,omitempty"`
@@ -211,7 +213,7 @@ type Groups struct {
 	Campus            string                       `dynamo:"Campus,omitempty" json:"campus,omitempty"`
 	CampusName        string                       `dynamo:"CampusName,omitempty" json:"campusName,omitempty"`
 	Capacity          GroupCapacity                `dynamo:"Capacity,omitempty" json:"capacity,omitempty"`
-	ConfirmResponse   string                       `dynamo:"ConfirmResponse,omitempty" json:"confirmResponse,omitempty"`
+	ConfirmResponse    string                       `dynamo:"ConfirmResponse,omitempty" json:"confirmResponse,omitempty"`
 	CreatedAt         int64                        `dynamo:"CreatedAt,omitempty" json:"createdAt,omitempty"`
 	Details           GroupDetails                 `dynamo:"Details,omitempty" json:"details,omitempty"`
 	GroupName         string                       `dynamo:"GroupName,omitempty" json:"groupName,omitempty"`
@@ -227,6 +229,8 @@ type Groups struct {
 	RequestFormLink   string                       `dynamo:"RequestFormLink,omitempty" json:"requestFormLink,omitempty"`
 	AccessKey         string                       `dynamo:"AccessKey,omitempty" json:"accessKey,omitempty"`
 	Type              string                       `dynamo:"Type,omitempty" json:"type,omitempty"`
+	HasRoster		  bool                         `dynamo:"HasRoster,omitempty" json:"hasRoster,omitempty"` // a flag whether this group has a bound roster
+	Roster            string 					   `dynamo:"Roster,omitempty" json:"roster,omitempty"` // the uuid of the roster in the roster db
 }
 
 // GroupDetails of a Groups
@@ -280,3 +284,33 @@ type NewCreationQR struct {
 	SentAt    int64  `dynamo:"SentAt,omitempty" json:"sentAt,omitempty"`
 	ExpiredAt int64  `dynamo:"ExpiredAt,omitempty" json:"expiredAt,omitempty"`
 }
+
+type GroupRoster struct {
+	UUID      			string 	  			`dynamo:"UUID,hash" json:"UUID,omitempty"` // unique identifier of a roster for a single event
+	CreatedAt           time.Time           `dynamo:"CreatedAt,omitempty" json:"createdAt,omitempty"` // time the roster was created
+	CreatedBy			string				`dynamo:"CreatedBy,omitempty" json:"createdBy,omitempty"`	// auth user who created the roster
+	LastUpdated         time.Time           `dynamo:"LastUpdated,omitempty" json:"lastUpdated,omitempty"`	// time the roster was last updated
+	LastUpdatedBy		string				`dynamo:"LastUpdatedBy,omitempty" json:"lastUpdatedBy,omitempty"`	// auth user who last updated the roster
+	GroupID   			string 	  			`dynamo:"GroupID,omitempty" json:"groupID,omitempty"` // the id of the group the roster is bound to
+	GroupType			string 				`dynamo:"GroupType,omitempty" json:"groupType,omitempty"` // the type of group the roster is for (ex: grow group, event, baptism, growth track, etc)
+	TeamsRequired 	    []string  			`dynamo:"ServeTeams,omitempty" json:"serveTeams,omitempty"` // a list of serve team ids required for the roster
+	Teams 				[]RosterTeam    	`dynamo:"Teams,omitempty" json:"teams,omitempty"` // a list of serve team ids required for the roster
+}
+
+type RosterTeam struct {
+	TeamID 					string  	`dynamo:"TeamID,omitempty" json:"teamID,omitempty"` // the id of the serve team
+	RequiredCompleteTime	time.Time	`dynamo:"RequiredCompleteTime" json:"requiredCompleteTime"` // the time that the roster must be completed by
+	IsComplete 				bool    	`dynamo:"IsComplete" json:"isComplete"` // a flag for whether or not the roster for this team has been complete or if there are still slots to fill
+	CompletedOn				time.Time	`dynamo:"CompletedOn" json:"completedOn"` // time for when roster was completed
+	Rosters 				[]Roster 	`dynamo:"Rosters" json:"rosters"` // a flag for whether or not the roster for this team has been complete or if there are still slots to fill
+}
+
+type Roster struct {
+	UUID 			string		`dynamo:"UUID" json:"uuid"` // uuid of the user being rostered
+	RosterAccepted  bool		`dynamo:"RosterAccepted,omitempty" json:"rosterAccepted"` // a flag whether or not a user accepted the roster
+	AcceptedOn		time.Time  	`dynamo:"AcceptedOn,omitempty" json:"acceptedOn"` // time of acceptance
+	DeclinedOn		time.Time	`dynamo:"DeclinedOn,omitempty" json:"declinedOn"` // time of decline
+	DeclineReason 	string 		`dynamo:"DeclineReason" json:"declineReason"` // reason for user decline
+}
+
+
