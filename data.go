@@ -287,23 +287,26 @@ type NewCreationQR struct {
 }
 
 type Roster struct {
-	UUID      			string 	  			`dynamo:"UUID,hash" json:"UUID,omitempty"` // unique identifier of a roster for a single event
-	Account             string              `dynamo:"Account,omitempty" json:"account,omitempty"` // id of the account the roster belongs to
-	AccountName         string              `dynamo:"AccountName,omitempty" json:"accountName,omitempty"` // friendly name of the account the roster belongs to
-	Campus              string              `dynamo:"Campus,omitempty" json:"campus,omitempty"` // id of the campus the roster belongs to
-	CampusName          string              `dynamo:"CampusName,omitempty" json:"campusName,omitempty"` // friendly name of the campus the roster belongs to
-	CreatedAt           time.Time           `dynamo:"CreatedAt,omitempty" json:"createdAt,omitempty"` // time the roster was created
-	CreatedBy			string				`dynamo:"CreatedBy,omitempty" json:"createdBy,omitempty"`	// auth user who created the roster
-	LastUpdated         time.Time           `dynamo:"LastUpdated,omitempty" json:"lastUpdated,omitempty"`	// time the roster was last updated
-	LastUpdatedBy		string				`dynamo:"LastUpdatedBy,omitempty" json:"lastUpdatedBy,omitempty"`	// auth user who last updated the roster
-	GroupID   			string 	  			`dynamo:"GroupID,omitempty" json:"groupID,omitempty"` // the id of the group the roster is bound to
-	GroupType			string 				`dynamo:"GroupType,omitempty" json:"groupType,omitempty"` // the type of group the roster is for (ex: grow group, event, baptism, growth track, etc)
-	Teams 				[]RosterTeam    	`dynamo:"Teams,omitempty" json:"teams,omitempty"` // a list of serve team ids required for the roster
+	UUID      					string 	  			`dynamo:"UUID,hash" json:"UUID,omitempty"` // unique identifier of a roster for a single event
+	Account             		string              `dynamo:"Account,omitempty" json:"account,omitempty"` // id of the account the roster belongs to
+	AccountName         		string              `dynamo:"AccountName,omitempty" json:"accountName,omitempty"` // friendly name of the account the roster belongs to
+	Campus              		string              `dynamo:"Campus,omitempty" json:"campus,omitempty"` // id of the campus the roster belongs to
+	CampusName          		string              `dynamo:"CampusName,omitempty" json:"campusName,omitempty"` // friendly name of the campus the roster belongs to
+	CreatedAt           		time.Time           `dynamo:"CreatedAt,omitempty" json:"createdAt,omitempty"` // time the roster was created
+	CreatedBy					string				`dynamo:"CreatedBy,omitempty" json:"createdBy,omitempty"`	// auth user who created the roster
+	LastUpdated         		time.Time           `dynamo:"LastUpdated,omitempty" json:"lastUpdated,omitempty"`	// time the roster was last updated
+	LastUpdatedBy				string				`dynamo:"LastUpdatedBy,omitempty" json:"lastUpdatedBy,omitempty"`	// auth user who last updated the roster
+	GroupID   					string 	  			`dynamo:"GroupID,omitempty" json:"groupID,omitempty"` // the id of the group the roster is bound to
+	GroupType					string 				`dynamo:"GroupType,omitempty" json:"groupType,omitempty"` // the type of group the roster is for (ex: grow group, event, baptism, growth track, etc)
+	Teams 						[]RosterTeam    	`dynamo:"Teams,omitempty" json:"teams,omitempty"` // a list of serve team ids required for the roster
+	DesiredFillTime				time.Time			`dynamo:"DesiredFillTime" json:"desiredFillTime"` // the time that the roster must be filled by
 }
 
 type RosterTeam struct {
 	TeamID 						string  		`dynamo:"TeamID,omitempty" json:"teamID,omitempty"` // the id of the serve team
-	RequiredFillTime			time.Time		`dynamo:"RequiredFillTime" json:"requiredFillTime"` // the time that the roster must be filled by
+	RequestedAt 				time.Time		`dynamo:"RequestedAt,omitempty" json:"requestedAt,omitempty"` // time that a leader(s) receive a request to fill their team
+	SubmittedAt 				time.Time		`dynamo:"SubmittedAt,omitempty" json:"submittedAt,omitempty"` // time that a leader(s) sends out their roster request to their member(s)
+	DesiredFillTime				time.Time		`dynamo:"DesiredFillTime" json:"desiredFillTime"` // the time that the roster must be filled by
 	Filled 						bool    		`dynamo:"Filled" json:"filled"` // a flag for whether or not the roster for this team has been filled or if there are still slots to fill
 	FilledOn					time.Time		`dynamo:"FilledOn" json:"filledOn"` // time for when roster was filled
 	TeamRoles					[]string		`dynamo:"TeamRoles" json:"teamRoles"` // team role id's required for this roster team
