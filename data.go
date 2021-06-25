@@ -231,7 +231,7 @@ type Groups struct {
 	Type              string                       `dynamo:"Type,omitempty" json:"type,omitempty"`
 	HasRoster		  bool                         `dynamo:"HasRoster,omitempty" json:"hasRoster,omitempty"` // a flag whether this group has a bound roster
 	RosterID          string 					   `dynamo:"RosterID,omitempty" json:"rosterID,omitempty"` // the uuid of the roster in the roster db
-	Roles			  []string // list or role ids
+	Roles			  []string 					   `dynamo:"Roles,omitempty" json:"roles,omitempty"` // list or role ids
 }
 
 // GroupDetails of a Groups
