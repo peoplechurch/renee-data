@@ -230,7 +230,8 @@ type Groups struct {
 	AccessKey         string                       `dynamo:"AccessKey,omitempty" json:"accessKey,omitempty"`
 	Type              string                       `dynamo:"Type,omitempty" json:"type,omitempty"`
 	HasRoster		  bool                         `dynamo:"HasRoster,omitempty" json:"hasRoster,omitempty"` // a flag whether this group has a bound roster
-	RosterID            string 					   `dynamo:"RosterID,omitempty" json:"rosterID,omitempty"` // the uuid of the roster in the roster db
+	RosterID          string 					   `dynamo:"RosterID,omitempty" json:"rosterID,omitempty"` // the uuid of the roster in the roster db
+	Roles			  []string // list or role ids
 }
 
 // GroupDetails of a Groups
@@ -285,8 +286,12 @@ type NewCreationQR struct {
 	ExpiredAt int64  `dynamo:"ExpiredAt,omitempty" json:"expiredAt,omitempty"`
 }
 
-type GroupRoster struct {
+type Roster struct {
 	UUID      			string 	  			`dynamo:"UUID,hash" json:"UUID,omitempty"` // unique identifier of a roster for a single event
+	Account             string              `dynamo:"Account,omitempty" json:"account,omitempty"` // id of the account the roster belongs to
+	AccountName         string              `dynamo:"AccountName,omitempty" json:"accountName,omitempty"` // friendly name of the account the roster belongs to
+	Campus              string              `dynamo:"Campus,omitempty" json:"campus,omitempty"` // id of the campus the roster belongs to
+	CampusName          string              `dynamo:"CampusName,omitempty" json:"campusName,omitempty"` // friendly name of the campus the roster belongs to
 	CreatedAt           time.Time           `dynamo:"CreatedAt,omitempty" json:"createdAt,omitempty"` // time the roster was created
 	CreatedBy			string				`dynamo:"CreatedBy,omitempty" json:"createdBy,omitempty"`	// auth user who created the roster
 	LastUpdated         time.Time           `dynamo:"LastUpdated,omitempty" json:"lastUpdated,omitempty"`	// time the roster was last updated
@@ -298,18 +303,32 @@ type GroupRoster struct {
 
 type RosterTeam struct {
 	TeamID 						string  		`dynamo:"TeamID,omitempty" json:"teamID,omitempty"` // the id of the serve team
-	RequiredFillTime			time.Time		`dynamo:"RequiredFillTime" json:"requiredFillTime"` // the time that the roster must be completed by
-	IsFilled 					bool    		`dynamo:"IsFilled" json:"isFilled"` // a flag for whether or not the roster for this team has been complete or if there are still slots to fill
-	FilledOn					time.Time		`dynamo:"FilledOn" json:"filledOn"` // time for when roster was completed
+	RequiredFillTime			time.Time		`dynamo:"RequiredFillTime" json:"requiredFillTime"` // the time that the roster must be filled by
+	Filled 						bool    		`dynamo:"Filled" json:"filled"` // a flag for whether or not the roster for this team has been filled or if there are still slots to fill
+	FilledOn					time.Time		`dynamo:"FilledOn" json:"filledOn"` // time for when roster was filled
+	TeamRoles					[]string		`dynamo:"TeamRoles" json:"teamRoles"` // team role id's required for this roster team
+	DesiredMemberCount			int 			`dynamo:"DesiredMemberCount" json:"desiredMemberCount"` // total volume of team members desired for this team roster
 	RosterMembers 				[]RosterMember 	`dynamo:"RosterMembers" json:"rosterMembers"` // a list of people assigned to this roster team
 }
 
 type RosterMember struct {
-	UUID 			string		`dynamo:"UUID" json:"uuid"` // uuid of the user being rostered
-	RosterAccepted  bool		`dynamo:"RosterAccepted,omitempty" json:"rosterAccepted"` // a flag whether or not a user accepted the roster
-	AcceptedOn		time.Time  	`dynamo:"AcceptedOn,omitempty" json:"acceptedOn"` // time of acceptance
-	DeclinedOn		time.Time	`dynamo:"DeclinedOn,omitempty" json:"declinedOn"` // time of decline
-	DeclineReason 	string 		`dynamo:"DeclineReason" json:"declineReason"` // reason for user decline
+	UUID 				string		`dynamo:"UUID" json:"uuid"` // uuid of the user being rostered
+	TeamRole			string		`dynamo:"TeamRole" json:"teamRole"` // the team role id the user is being rostered for
+	Accepted  			bool		`dynamo:"Accepted,omitempty" json:"accepted"` // a flag whether or not a user accepted the roster
+	AcceptedOn			time.Time  	`dynamo:"AcceptedOn,omitempty" json:"acceptedOn"` // time of acceptance
+	DeclinedOn			time.Time	`dynamo:"DeclinedOn,omitempty" json:"declinedOn"` // time of decline
+	DeclineReason 		string 		`dynamo:"DeclineReason" json:"declineReason"` // reason for user decline
+}
+
+type GroupRole struct {
+	UUID 				string				`dynamo:"UUID,hash" json:"uuid"` // uuid of the role
+	Name 				string				`dynamo:"Name,omitempty" json:"name,omitempty"` // friendly name of the role
+	GroupID 			string				`dynamo:"GroupID,omitempty" json:"groupID,omitempty"` // uuid of the group the role is bound to
+	GroupType			string				`dynamo:"GroupType,omitempty" json:"groupType,omitempty"` // type of the group for the group id
+	CreatedAt           time.Time           `dynamo:"CreatedAt,omitempty" json:"createdAt,omitempty"` // time the role was created
+	CreatedBy			string				`dynamo:"CreatedBy,omitempty" json:"createdBy,omitempty"`	// auth user who created the role
+	LastUpdated         time.Time           `dynamo:"LastUpdated,omitempty" json:"lastUpdated,omitempty"`	// time the role was last updated
+	LastUpdatedBy		string				`dynamo:"LastUpdatedBy,omitempty" json:"lastUpdatedBy,omitempty"`	// auth user who last updated the role
 }
 
 
