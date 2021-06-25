@@ -124,7 +124,7 @@ type Campus struct {
 	SlackSigningSecret                       string   `dynamo:"SlackSigningSecret,omitempty" json:"slackSigningSecret,omitempty"`
 	SlackTeamID                              string   `dynamo:"SlackTeamID,omitempty" json:"slackTeamID,omitempty"`
 	SlackURL                                 string   `dynamo:"SlackURL,omitempty" json:"slackURL,omitempty"`
-	SlackVerificationToken                   string    `dynamo:"SlackVerificationToken,omitempty" json:"slackVerificationToken,omitempty"`
+	SlackVerificationToken                   string   `dynamo:"SlackVerificationToken,omitempty" json:"slackVerificationToken,omitempty"`
 	SlashRenee                               string   `dynamo:"SlashRenee,omitempty" json:"slashRenee,omitempty"`
 	TimeZone                                 string   `dynamo:"TimeZone,omitempty" json:"timeZone,omitempty"`
 	UUID                                     string   `dynamo:"UUID,hash,omitempty" json:"UUID"`
@@ -213,7 +213,7 @@ type Groups struct {
 	Campus            string                       `dynamo:"Campus,omitempty" json:"campus,omitempty"`
 	CampusName        string                       `dynamo:"CampusName,omitempty" json:"campusName,omitempty"`
 	Capacity          GroupCapacity                `dynamo:"Capacity,omitempty" json:"capacity,omitempty"`
-	ConfirmResponse    string                       `dynamo:"ConfirmResponse,omitempty" json:"confirmResponse,omitempty"`
+	ConfirmResponse   string                       `dynamo:"ConfirmResponse,omitempty" json:"confirmResponse,omitempty"`
 	CreatedAt         int64                        `dynamo:"CreatedAt,omitempty" json:"createdAt,omitempty"`
 	Details           GroupDetails                 `dynamo:"Details,omitempty" json:"details,omitempty"`
 	GroupName         string                       `dynamo:"GroupName,omitempty" json:"groupName,omitempty"`
@@ -229,9 +229,9 @@ type Groups struct {
 	RequestFormLink   string                       `dynamo:"RequestFormLink,omitempty" json:"requestFormLink,omitempty"`
 	AccessKey         string                       `dynamo:"AccessKey,omitempty" json:"accessKey,omitempty"`
 	Type              string                       `dynamo:"Type,omitempty" json:"type,omitempty"`
-	HasRoster		  bool                         `dynamo:"HasRoster,omitempty" json:"hasRoster,omitempty"` // a flag whether this group has a bound roster
-	RosterID          string 					   `dynamo:"RosterID,omitempty" json:"rosterID,omitempty"` // the uuid of the roster in the roster db
-	Roles			  []string 					   `dynamo:"Roles,omitempty" json:"roles,omitempty"` // list or role ids
+	HasRoster         bool                         `dynamo:"HasRoster,omitempty" json:"hasRoster,omitempty"` // a flag whether this group has a bound roster
+	RosterID          string                       `dynamo:"RosterID,omitempty" json:"rosterID,omitempty"`   // the uuid of the roster in the roster db
+	Roles             []string                     `dynamo:"Roles,omitempty" json:"roles,omitempty"`         // list or role ids
 }
 
 // GroupDetails of a Groups
@@ -287,51 +287,49 @@ type NewCreationQR struct {
 }
 
 type Roster struct {
-	UUID      					string 	  			`dynamo:"UUID,hash" json:"UUID,omitempty"` // unique identifier of a roster for a single event
-	Account             		string              `dynamo:"Account,omitempty" json:"account,omitempty"` // id of the account the roster belongs to
-	AccountName         		string              `dynamo:"AccountName,omitempty" json:"accountName,omitempty"` // friendly name of the account the roster belongs to
-	Campus              		string              `dynamo:"Campus,omitempty" json:"campus,omitempty"` // id of the campus the roster belongs to
-	CampusName          		string              `dynamo:"CampusName,omitempty" json:"campusName,omitempty"` // friendly name of the campus the roster belongs to
-	CreatedAt           		time.Time           `dynamo:"CreatedAt,omitempty" json:"createdAt,omitempty"` // time the roster was created
-	CreatedBy					string				`dynamo:"CreatedBy,omitempty" json:"createdBy,omitempty"`	// auth user who created the roster
-	LastUpdated         		time.Time           `dynamo:"LastUpdated,omitempty" json:"lastUpdated,omitempty"`	// time the roster was last updated
-	LastUpdatedBy				string				`dynamo:"LastUpdatedBy,omitempty" json:"lastUpdatedBy,omitempty"`	// auth user who last updated the roster
-	GroupID   					string 	  			`dynamo:"GroupID,omitempty" json:"groupID,omitempty"` // the id of the group the roster is bound to
-	GroupType					string 				`dynamo:"GroupType,omitempty" json:"groupType,omitempty"` // the type of group the roster is for (ex: grow group, event, baptism, growth track, etc)
-	Teams 						[]RosterTeam    	`dynamo:"Teams,omitempty" json:"teams,omitempty"` // a list of serve team ids required for the roster
-	DesiredFillTime				time.Time			`dynamo:"DesiredFillTime" json:"desiredFillTime"` // the time that the roster must be filled by
+	UUID            string       `dynamo:"UUID,hash" json:"UUID,omitempty"`                        // unique identifier of a roster for a single event
+	Account         string       `dynamo:"Account,omitempty" json:"account,omitempty"`             // id of the account the roster belongs to
+	AccountName     string       `dynamo:"AccountName,omitempty" json:"accountName,omitempty"`     // friendly name of the account the roster belongs to
+	Campus          string       `dynamo:"Campus,omitempty" json:"campus,omitempty"`               // id of the campus the roster belongs to
+	CampusName      string       `dynamo:"CampusName,omitempty" json:"campusName,omitempty"`       // friendly name of the campus the roster belongs to
+	CreatedAt       time.Time    `dynamo:"CreatedAt,omitempty" json:"createdAt,omitempty"`         // time the roster was created
+	CreatedBy       string       `dynamo:"CreatedBy,omitempty" json:"createdBy,omitempty"`         // auth user who created the roster
+	LastUpdated     time.Time    `dynamo:"LastUpdated,omitempty" json:"lastUpdated,omitempty"`     // time the roster was last updated
+	LastUpdatedBy   string       `dynamo:"LastUpdatedBy,omitempty" json:"lastUpdatedBy,omitempty"` // auth user who last updated the roster
+	GroupID         string       `dynamo:"GroupID,omitempty" json:"groupID,omitempty"`             // the id of the group the roster is bound to
+	GroupType       string       `dynamo:"GroupType,omitempty" json:"groupType,omitempty"`         // the type of group the roster is for (ex: grow group, event, baptism, growth track, etc)
+	Teams           []RosterTeam `dynamo:"Teams,omitempty" json:"teams,omitempty"`                 // a list of serve team ids required for the roster
+	DesiredFillTime time.Time    `dynamo:"DesiredFillTime" json:"desiredFillTime"`                 // the time that the roster must be filled by
 }
 
 type RosterTeam struct {
-	TeamID 						string  		`dynamo:"TeamID,omitempty" json:"teamID,omitempty"` // the id of the serve team
-	RequestedAt 				time.Time		`dynamo:"RequestedAt,omitempty" json:"requestedAt,omitempty"` // time that a leader(s) receive a request to fill their team
-	SubmittedAt 				time.Time		`dynamo:"SubmittedAt,omitempty" json:"submittedAt,omitempty"` // time that a leader(s) sends out their roster request to their member(s)
-	DesiredFillTime				time.Time		`dynamo:"DesiredFillTime" json:"desiredFillTime"` // the time that the roster must be filled by
-	Filled 						bool    		`dynamo:"Filled" json:"filled"` // a flag for whether or not the roster for this team has been filled or if there are still slots to fill
-	FilledOn					time.Time		`dynamo:"FilledOn" json:"filledOn"` // time for when roster was filled
-	TeamRoles					[]string		`dynamo:"TeamRoles" json:"teamRoles"` // team role id's required for this roster team
-	DesiredMemberCount			int 			`dynamo:"DesiredMemberCount" json:"desiredMemberCount"` // total volume of team members desired for this team roster
-	RosterMembers 				[]RosterMember 	`dynamo:"RosterMembers" json:"rosterMembers"` // a list of people assigned to this roster team
+	TeamID             string         `dynamo:"TeamID,omitempty" json:"teamID,omitempty"`           // the id of the serve team
+	RequestedAt        time.Time      `dynamo:"RequestedAt,omitempty" json:"requestedAt,omitempty"` // time that a leader(s) receive a request to fill their team
+	SubmittedAt        time.Time      `dynamo:"SubmittedAt,omitempty" json:"submittedAt,omitempty"` // time that a leader(s) sends out their roster request to their member(s)
+	DesiredFillTime    time.Time      `dynamo:"DesiredFillTime" json:"desiredFillTime"`             // the time that the roster must be filled by
+	Filled             bool           `dynamo:"Filled" json:"filled"`                               // a flag for whether or not the roster for this team has been filled or if there are still slots to fill
+	FilledOn           time.Time      `dynamo:"FilledOn" json:"filledOn"`                           // time for when roster was filled
+	TeamRoles          []string       `dynamo:"TeamRoles" json:"teamRoles"`                         // team role id's required for this roster team
+	DesiredMemberCount int            `dynamo:"DesiredMemberCount" json:"desiredMemberCount"`       // total volume of team members desired for this team roster
+	RosterMembers      []RosterMember `dynamo:"RosterMembers" json:"rosterMembers"`                 // a list of people assigned to this roster team
 }
 
 type RosterMember struct {
-	UUID 				string		`dynamo:"UUID" json:"uuid"` // uuid of the user being rostered
-	TeamRole			string		`dynamo:"TeamRole" json:"teamRole"` // the team role id the user is being rostered for
-	Accepted  			bool		`dynamo:"Accepted,omitempty" json:"accepted"` // a flag whether or not a user accepted the roster
-	AcceptedOn			time.Time  	`dynamo:"AcceptedOn,omitempty" json:"acceptedOn"` // time of acceptance
-	DeclinedOn			time.Time	`dynamo:"DeclinedOn,omitempty" json:"declinedOn"` // time of decline
-	DeclineReason 		string 		`dynamo:"DeclineReason" json:"declineReason"` // reason for user decline
+	UUID          string    `dynamo:"UUID" json:"uuid"`                       // uuid of the user being rostered
+	TeamRole      string    `dynamo:"TeamRole" json:"teamRole"`               // the team role id the user is being rostered for
+	Accepted      bool      `dynamo:"Accepted,omitempty" json:"accepted"`     // a flag whether or not a user accepted the roster
+	AcceptedOn    time.Time `dynamo:"AcceptedOn,omitempty" json:"acceptedOn"` // time of acceptance
+	DeclinedOn    time.Time `dynamo:"DeclinedOn,omitempty" json:"declinedOn"` // time of decline
+	DeclineReason string    `dynamo:"DeclineReason" json:"declineReason"`     // reason for user decline
 }
 
 type GroupRole struct {
-	UUID 				string				`dynamo:"UUID,hash" json:"uuid"` // uuid of the role
-	Name 				string				`dynamo:"Name,omitempty" json:"name,omitempty"` // friendly name of the role
-	GroupID 			string				`dynamo:"GroupID,omitempty" json:"groupID,omitempty"` // uuid of the group the role is bound to
-	GroupType			string				`dynamo:"GroupType,omitempty" json:"groupType,omitempty"` // type of the group for the group id
-	CreatedAt           time.Time           `dynamo:"CreatedAt,omitempty" json:"createdAt,omitempty"` // time the role was created
-	CreatedBy			string				`dynamo:"CreatedBy,omitempty" json:"createdBy,omitempty"`	// auth user who created the role
-	LastUpdated         time.Time           `dynamo:"LastUpdated,omitempty" json:"lastUpdated,omitempty"`	// time the role was last updated
-	LastUpdatedBy		string				`dynamo:"LastUpdatedBy,omitempty" json:"lastUpdatedBy,omitempty"`	// auth user who last updated the role
+	UUID          string    `dynamo:"UUID,hash" json:"uuid"`                                  // uuid of the role
+	Name          string    `dynamo:"Name,omitempty" json:"name,omitempty"`                   // friendly name of the role
+	GroupID       string    `dynamo:"GroupID,omitempty" json:"groupID,omitempty"`             // uuid of the group the role is bound to
+	GroupType     string    `dynamo:"GroupType,omitempty" json:"groupType,omitempty"`         // type of the group for the group id
+	CreatedAt     time.Time `dynamo:"CreatedAt,omitempty" json:"createdAt,omitempty"`         // time the role was created
+	CreatedBy     string    `dynamo:"CreatedBy,omitempty" json:"createdBy,omitempty"`         // auth user who created the role
+	LastUpdated   time.Time `dynamo:"LastUpdated,omitempty" json:"lastUpdated,omitempty"`     // time the role was last updated
+	LastUpdatedBy string    `dynamo:"LastUpdatedBy,omitempty" json:"lastUpdatedBy,omitempty"` // auth user who last updated the role
 }
-
-
